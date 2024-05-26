@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HICARE</string>
+    <string name="splash">splash\n</string>
 </resources>
