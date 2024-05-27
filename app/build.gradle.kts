@@ -33,6 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    dataBinding {
+        enable = true
+    }
+    viewBinding {
+        enable = true
+    }
 }
 
 dependencies {
@@ -45,4 +51,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation ("androidx.databinding:databinding-runtime:7.0.0")
+    implementation ("com.github.qamarelsafadi:CurvedBottomNavigation:0.1.3")
+
 }
