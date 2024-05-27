@@ -48,6 +48,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.material3.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -55,4 +56,15 @@ dependencies {
     implementation ("androidx.databinding:databinding-runtime:7.0.0")
     implementation ("com.github.qamarelsafadi:CurvedBottomNavigation:0.1.3")
 
+    val cameraxVersion = "1.3.0"
+
+    implementation("androidx.camera:camera-camera2:$cameraxVersion")
+    implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
+    implementation("androidx.camera:camera-view:$cameraxVersion")
+
+    implementation ("androidx.camera:camera-core:1.2.0")
+    implementation ("androidx.camera:camera-camera2:1.2.0")
+    implementation ("androidx.camera:camera-lifecycle:1.2.0")
+    implementation ("androidx.camera:camera-view:1.2.0")
+    implementation ("androidx.camera:camera-extensions:1.2.0")
 }

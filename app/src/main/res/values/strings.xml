@@ -3,4 +3,7 @@
     <string name="splash">splash\n</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_open_camera">Ada Kesalahan</string>
+    <string name="camera_switch">switch_camera</string>
+    <string name="camera_capture">camera_capture</string>
 </resources>
