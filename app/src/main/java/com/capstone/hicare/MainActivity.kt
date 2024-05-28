@@ -1,9 +1,10 @@
 package com.capstone.hicare
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         enableEdgeToEdge()
+
+        supportActionBar?.apply {
+            val colorDrawable = ColorDrawable(Color.parseColor("#FFFFFF"))
+            title = ""
+            setHomeButtonEnabled(true)
+            setDisplayHomeAsUpEnabled(false)
+            setBackgroundDrawable(colorDrawable)
+            elevation = 0f
+        }
 
         val bottomNavigation = findViewById<CurvedBottomNavigation>(R.id.bottomNavigation)
         bottomNavigation.add(
@@ -65,6 +75,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, SettingActivity::class.java))
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
