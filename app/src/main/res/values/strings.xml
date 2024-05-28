@@ -10,4 +10,7 @@
     <string name="see_all">See All</string>
     <string name="jenis_penyakit">Jenis Penyakit</string>
     <string name="nama_tanaman">Nama Tanaman</string>
+    <string name="delete">delete</string>
+    <string name="image_plant">image plant</string>
+    <string name="no_history_found">Riwayat tidak ditemukan</string>
 </resources>
