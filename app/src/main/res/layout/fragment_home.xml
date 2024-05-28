@@ -37,14 +37,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:text="Identify Disease"
+                android:text="@string/identify_disease"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:src="@drawable/baseline_camera_24" />
+                android:src="@drawable/img_disease" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -70,21 +70,21 @@
             <ImageView
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:src="@drawable/baseline_camera_24" />
+                android:src="@drawable/pic_diagnose" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:text="Diagnose From Gallery"
+                android:text="@string/diagnose_from_gallery"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:src="@drawable/baseline_camera_24" />
+                android:src="@drawable/img_diagnose" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -114,7 +114,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Last Diagnose"
+                android:text="@string/last_diagnose"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -123,7 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:text="See All"
+                android:text="@string/see_all"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
@@ -156,12 +156,12 @@
             <ImageView
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:src="@drawable/baseline_camera_24" />
+                android:src="@drawable/sample" />
 
             <TextView
                 android:layout_width="261dp"
                 android:layout_height="wrap_content"
-                android:text="Nama Tanaman"
+                android:text="@string/nama_tanaman"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -170,7 +170,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Jenis Penyakit"
+                android:text="@string/jenis_penyakit"
                 android:textSize="16sp"
                 android:textColor="@android:color/black" />
         </LinearLayout>

@@ -3,8 +3,11 @@
     <string name="splash">splash\n</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="error_open_camera">Ada Kesalahan</string>
-    <string name="camera_switch">switch_camera</string>
-    <string name="camera_capture">camera_capture</string>
-    <string name="setting">setting\n</string>
+    <string name="setting">setting</string>
+    <string name="identify_disease">Identify Disease</string>
+    <string name="diagnose_from_gallery">Diagnose From Gallery</string>
+    <string name="last_diagnose">Last Diagnose</string>
+    <string name="see_all">See All</string>
+    <string name="jenis_penyakit">Jenis Penyakit</string>
+    <string name="nama_tanaman">Nama Tanaman</string>
 </resources>
