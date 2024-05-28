@@ -2,14 +2,11 @@ package com.capstone.hicare
 
 
 import android.content.pm.PackageManager
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.Preview
@@ -41,7 +38,6 @@ class CameraFragment : Fragment() {
             requestCameraPermission()
         }
         return binding.root
-
     }
 
     private fun requestCameraPermission() {

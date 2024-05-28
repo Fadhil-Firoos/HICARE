@@ -6,26 +6,25 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.capstone.hicare.databinding.ActivityMainBinding
 import com.qamar.curvedbottomnaviagtion.CurvedBottomNavigation
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private var fragment: Fragment = HomeFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         enableEdgeToEdge()
-
-        supportActionBar?.apply {
-            val colorDrawable = ColorDrawable(Color.parseColor("#FFFFFF"))
-            title = ""
-            setHomeButtonEnabled(true)
-            setDisplayHomeAsUpEnabled(false)
-            setBackgroundDrawable(colorDrawable)
-            elevation = 0f
-        }
+        val myToolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        setSupportActionBar(myToolbar)
 
         val bottomNavigation = findViewById<CurvedBottomNavigation>(R.id.bottomNavigation)
         bottomNavigation.add(
@@ -40,11 +39,23 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigation.setOnClickMenuListener {
             when (it.id) {
-                1 -> { replaceFragment(HomeFragment())
+                1 -> {
+                    fragment = HomeFragment()
+                    replaceFragment(
+                        fragment
+                    )
                 }
-                2 -> {replaceFragment(CameraFragment())
+                2 -> {
+                    fragment = CameraFragment()
+                    replaceFragment(
+                        fragment
+                    )
                 }
-                3 -> {replaceFragment(HistoryFragment())
+                3 -> {
+                    fragment = HistoryFragment()
+                    replaceFragment(
+                        fragment
+                    )
                 }
 
             }
@@ -53,9 +64,32 @@ class MainActivity : AppCompatActivity() {
         }
         replaceFragment(HomeFragment())
         bottomNavigation.show(1)
+
+        binding.btnHomeCamera.setOnClickListener{
+            updateBottomNavigation(1)
+            fragment = HomeFragment()
+            replaceFragment(fragment)
+        }
     }
 
     private fun replaceFragment(fragment: Fragment) {
+
+        if (fragment is CameraFragment) {
+            binding.btnHomeCamera.visibility = View.VISIBLE
+            binding.bottomNavigation.visibility = View.GONE
+            supportActionBar?.hide()
+
+        } else {
+            binding.bottomNavigation.visibility = View.VISIBLE
+            supportActionBar?.apply {
+                title = ""
+                setHomeButtonEnabled(false)
+                setDisplayHomeAsUpEnabled(false)
+                setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                elevation = 0f
+            }
+        }
+
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.Frame_container, fragment)
@@ -63,13 +97,15 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun navigateToCameraFragment() {
-        replaceFragment(CameraFragment())
+        fragment = CameraFragment()
+        replaceFragment(fragment)
         updateBottomNavigation(2)
     }
 
 
     fun navigateToHistoryFragment() {
-        replaceFragment(HistoryFragment())
+        fragment = HistoryFragment()
+        replaceFragment(fragment)
         updateBottomNavigation(3)
     }
 
@@ -80,11 +116,14 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation.show(index)
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
-        return super.onCreateOptionsMenu(menu)
+        return true
     }
+
+
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.btn_setting -> {

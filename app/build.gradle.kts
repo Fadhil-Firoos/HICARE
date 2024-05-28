@@ -33,11 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    dataBinding {
-        enable = true
-    }
-    viewBinding {
-        enable = true
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+        dataBinding = true
     }
 }
 
@@ -55,7 +54,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation ("androidx.databinding:databinding-runtime:7.0.0")
+    implementation ("androidx.databinding:databinding-runtime:8.4.1")
     implementation ("com.github.qamarelsafadi:CurvedBottomNavigation:0.1.3")
 
     val cameraxVersion = "1.3.0"
@@ -64,9 +63,9 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
     implementation("androidx.camera:camera-view:$cameraxVersion")
 
-    implementation ("androidx.camera:camera-core:1.2.0")
-    implementation ("androidx.camera:camera-camera2:1.2.0")
-    implementation ("androidx.camera:camera-lifecycle:1.2.0")
-    implementation ("androidx.camera:camera-view:1.2.0")
-    implementation ("androidx.camera:camera-extensions:1.2.0")
+    implementation ("androidx.camera:camera-core:1.3.3")
+    implementation ("androidx.camera:camera-camera2:1.3.3")
+    implementation ("androidx.camera:camera-lifecycle:1.3.3")
+    implementation ("androidx.camera:camera-view:1.3.3")
+    implementation ("androidx.camera:camera-extensions:1.3.3")
 }
