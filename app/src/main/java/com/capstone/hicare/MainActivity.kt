@@ -62,6 +62,24 @@ class MainActivity : AppCompatActivity() {
             .commit()
 
     }
+    fun navigateToCameraFragment() {
+        replaceFragment(CameraFragment())
+        updateBottomNavigation(2)
+    }
+
+
+    fun navigateToHistoryFragment() {
+        replaceFragment(HistoryFragment())
+        updateBottomNavigation(3)
+    }
+
+
+
+    private fun updateBottomNavigation(index: Int) {
+        val bottomNavigation = findViewById<CurvedBottomNavigation>(R.id.bottomNavigation)
+        bottomNavigation.show(index)
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
