@@ -5,6 +5,8 @@
     <color name="green_light">#B9F5D3</color>
     <color name="blue">#2196F3</color>
     <color name="transparent">#002196F3</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="transparant">#00000000</color>
 
 
 </resources>

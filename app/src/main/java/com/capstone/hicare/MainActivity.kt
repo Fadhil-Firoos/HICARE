@@ -23,8 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
-        val myToolbar = findViewById<Toolbar>(R.id.my_toolbar)
-        setSupportActionBar(myToolbar)
+        window.statusBarColor = getColor(R.color.white)
 
         val bottomNavigation = findViewById<CurvedBottomNavigation>(R.id.bottomNavigation)
         bottomNavigation.add(
@@ -83,9 +82,7 @@ class MainActivity : AppCompatActivity() {
             binding.bottomNavigation.visibility = View.VISIBLE
             supportActionBar?.apply {
                 title = ""
-                setHomeButtonEnabled(false)
-                setDisplayHomeAsUpEnabled(false)
-                setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                setBackgroundDrawable(ColorDrawable(Color.WHITE))
                 elevation = 0f
             }
         }
@@ -121,14 +118,9 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-
-
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.btn_setting -> {
-                // Tindakan yang diambil ketika item menu setting dipilih
-                // Contoh: Buka aktivitas pengaturan
                 startActivity(Intent(this, SettingActivity::class.java))
                 true
             }
