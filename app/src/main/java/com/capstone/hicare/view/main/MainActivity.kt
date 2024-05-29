@@ -7,9 +7,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityMainBinding
@@ -67,30 +68,52 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-        replaceFragment(HomeFragment())
+        fragment = HomeFragment()
+        replaceFragment(fragment)
         bottomNavigation.show(1)
 
-        binding.btnHomeCamera.setOnClickListener{
-            updateBottomNavigation(1)
-            fragment = HomeFragment()
-            replaceFragment(fragment)
+        binding.apply {
+            btnHomeCamera.setOnClickListener{
+                updateBottomNavigation(1)
+                fragment = HomeFragment()
+                replaceFragment(fragment)
+                btnHomeCamera.visibility = View.GONE
+            }
+
         }
     }
 
     private fun replaceFragment(fragment: Fragment) {
 
+        val myTextView = findViewById<FrameLayout>(R.id.Frame_container)
+
+        val layoutParams = myTextView.layoutParams as ViewGroup.MarginLayoutParams
+
         if (fragment is CameraFragment) {
-            binding.btnHomeCamera.visibility = View.VISIBLE
-            binding.bottomNavigation.visibility = View.GONE
+
+            layoutParams.bottomMargin = resources.getDimensionPixelSize(R.dimen.margin_zero)
+            myTextView.layoutParams = layoutParams
+
+            binding.apply {
+                btnHomeCamera.visibility = View.VISIBLE
+                bottomNavigation.visibility = View.GONE
+
+            }
             supportActionBar?.hide()
 
         } else {
+
+            layoutParams.bottomMargin = resources.getDimensionPixelSize(R.dimen.margin_61dp)
+            myTextView.layoutParams = layoutParams
+
             binding.bottomNavigation.visibility = View.VISIBLE
+            supportActionBar?.show()
             supportActionBar?.apply {
                 title = ""
                 setBackgroundDrawable(ColorDrawable(Color.WHITE))
                 elevation = 0f
             }
+
         }
 
         supportFragmentManager
