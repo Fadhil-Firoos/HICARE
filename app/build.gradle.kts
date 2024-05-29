@@ -68,4 +68,9 @@ dependencies {
     implementation ("androidx.camera:camera-lifecycle:1.3.3")
     implementation ("androidx.camera:camera-view:1.3.3")
     implementation ("androidx.camera:camera-extensions:1.3.3")
+
+    implementation ("com.github.yalantis:ucrop:2.2.5")
+
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+
 }
