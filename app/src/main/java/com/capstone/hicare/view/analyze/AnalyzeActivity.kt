@@ -1,7 +1,5 @@
 package com.capstone.hicare.view.analyze
 
-import android.app.Activity
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.capstone.hicare.databinding.ActivityAnalyzeBinding
 import com.capstone.hicare.utils.uriToFile
 import com.yalantis.ucrop.UCrop
-import java.io.File
 
 class AnalyzeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAnalyzeBinding
@@ -21,9 +18,17 @@ class AnalyzeActivity : AppCompatActivity() {
         binding = ActivityAnalyzeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val imageUriString = intent.getStringExtra("image_uri")
+        imageUriString?.let {
+            currentImageUri = Uri.parse(it)
+            binding.imageView.setImageURI(currentImageUri)
+        }
+
         binding.buttonGallery.setOnClickListener {
             galleryLauncher.launch("image/*")
         }
+
+
     }
 
     private val galleryLauncher = registerForActivityResult(
@@ -38,7 +43,7 @@ class AnalyzeActivity : AppCompatActivity() {
     private val cropImageLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        if (result.resultCode == Activity.RESULT_OK && result.data != null) {
+        if (result.resultCode == RESULT_OK && result.data != null) {
             val resultUri = UCrop.getOutput(result.data!!)
             resultUri?.let {
                 binding.imageView.setImageURI(it)
