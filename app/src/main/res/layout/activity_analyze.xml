@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:contentDescription="Image placeholder"
+        android:src="@drawable/sample"
+        app:layout_constraintBottom_toTopOf="@+id/buttonGallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hintTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Please insert a picture of lettuce"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonGallery"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/buttonGallery"
+        android:layout_width="155dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/green_light"
+        android:padding="8dp"
+        android:text="Gallery"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAnalyze"
+        app:layout_constraintMarginVertical="16dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/buttonCamera"
+        android:layout_width="155dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/green_light"
+        android:padding="8dp"
+        android:text="Camera"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAnalyze"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintMarginVertical="16dp"
+        app:layout_constraintStart_toEndOf="@+id/buttonGallery" />
+
+    <Button
+        android:id="@+id/buttonAnalyze"
+        android:layout_width="221dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="68dp"
+        android:backgroundTint="@color/green_light"
+        android:text="Analyze"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintMarginVertical="16dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
