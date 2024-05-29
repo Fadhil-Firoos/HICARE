@@ -7,7 +7,7 @@
     android:paddingHorizontal="16dp"
     android:paddingBottom="16dp"
     android:paddingTop="80dp"
-    tools:context=".HomeFragment">
+    tools:context=".view.fragment.HomeFragment">
 
 
     <androidx.cardview.widget.CardView

@@ -17,7 +17,7 @@
         android:theme="@style/Theme.HICARE"
         tools:targetApi="31">
         <activity
-            android:name=".SplashActivity"
+            android:name=".view.SplashActivity"
             android:theme="@style/Theme.HICARE"
             android:exported="true">
             <intent-filter>
@@ -27,12 +27,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingActivity"
+            android:name=".view.setting.SettingActivity"
             android:theme="@style/Theme.HICARE.ActionBar"
             android:exported="false">
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".view.main.MainActivity"
             android:theme="@style/Theme.HICARE.ActionBar"
             android:exported="true">
         </activity>
