@@ -1,5 +1,6 @@
 package com.capstone.hicare.view.analyze
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.hicare.databinding.ActivityAnalyzeBinding
 import com.capstone.hicare.utils.uriToFile
+import com.capstone.hicare.view.main.MainActivity
 import com.yalantis.ucrop.UCrop
 
 class AnalyzeActivity : AppCompatActivity() {
@@ -26,6 +28,12 @@ class AnalyzeActivity : AppCompatActivity() {
 
         binding.buttonGallery.setOnClickListener {
             galleryLauncher.launch("image/*")
+        }
+
+
+
+        binding.goHome.setOnClickListener{
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
 

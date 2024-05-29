@@ -45,6 +45,7 @@ class CameraFragment : Fragment() {
 
         binding.captureImage.setOnClickListener { takePhoto() }
         binding.switchCamera.setOnClickListener { switchCamera() }
+        binding.switchCamera.setOnClickListener { switchCamera() }
 
         return binding.root
     }
