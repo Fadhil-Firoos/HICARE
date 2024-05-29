@@ -28,6 +28,13 @@ class HomeFragment : Fragment() {
             (activity as MainActivity).navigateToHistoryFragment()
         }
 
+        val diagnoseCard = view.findViewById<CardView>(R.id.DiagnoseFromGallery)
+        diagnoseCard.setOnClickListener {
+            (activity as MainActivity).navigateToAnalyzeActivity()
+        }
+
+
+
         return view
     }
 }

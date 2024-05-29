@@ -13,6 +13,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityMainBinding
+import com.capstone.hicare.view.analyze.AnalyzeActivity
 import com.capstone.hicare.view.fragment.CameraFragment
 import com.capstone.hicare.view.fragment.HistoryFragment
 import com.capstone.hicare.view.fragment.HomeFragment
@@ -111,6 +112,11 @@ class MainActivity : AppCompatActivity() {
         updateBottomNavigation(3)
     }
 
+
+    fun navigateToAnalyzeActivity() {
+        val intent = Intent(this, AnalyzeActivity::class.java)
+        startActivity(intent)
+    }
 
 
     private fun updateBottomNavigation(index: Int) {
