@@ -109,5 +109,6 @@
     <string name="tes6_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
     <string name="tes6_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
 
-
+    <string name="tab_text_1">Home</string>
+    <string name="tab_text_2">Profile</string>
 </resources>
