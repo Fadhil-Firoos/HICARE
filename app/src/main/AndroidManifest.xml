@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32"
         tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
 
     <application
@@ -22,6 +24,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HICARE"
         tools:targetApi="31">
+        <activity
+            android:name=".view.detail.DetailActivity"
+            android:exported="false" />
         <activity
             android:name=".view.analyze.AnalyzeActivity"
             android:exported="false" />
@@ -38,19 +43,15 @@
         <activity
             android:name=".view.setting.SettingActivity"
             android:exported="false"
-            android:theme="@style/Theme.HICARE.ActionBar">
-
-        </activity>
+            android:theme="@style/Theme.HICARE.ActionBar"></activity>
         <activity
             android:name=".view.main.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.HICARE.ActionBar">
-
-        </activity>
+            android:theme="@style/Theme.HICARE.ActionBar"></activity>
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

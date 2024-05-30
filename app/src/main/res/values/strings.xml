@@ -14,4 +14,100 @@
     <string name="image_plant">image plant</string>
     <string name="no_history_found">Riwayat tidak ditemukan</string>
     <string name="home_icon">home icon</string>
+    <string name="last_diagnose">Last Diagnose</string>
+
+
+    <string-array name="DiseaseName">
+        <item><b>Tes 1</b></item>
+        <item><b>Tes 2</b></item>
+        <item><b>Tes 3</b></item>
+        <item><b>Tes 4</b></item>
+        <item><b>Tes 5</b></item>
+        <item><b>Tes 6</b></item>
+        <item><b>Tes 7</b></item>
+    </string-array>
+
+
+    <string-array name="DiseaseNameIndo">
+        <item><b>Tes 1</b></item>
+        <item><b>Tes 2</b></item>
+        <item><b>Tes 3</b></item>
+        <item><b>Tes 4</b></item>
+        <item><b>Tes 5</b></item>
+        <item><b>Tes 6</b></item>
+        <item><b>Tes 7</b></item>
+    </string-array>
+
+
+    <string-array name="DiseaseImage">
+        <item>@drawable/sample</item>
+        <item>@drawable/sample</item>
+        <item>@drawable/sample</item>
+        <item>@drawable/sample</item>
+        <item>@drawable/sample</item>
+        <item>@drawable/sample</item>
+        <item>@drawable/sample</item>
+    </string-array>
+
+
+    //SEHAT
+    <string name="benefits">Menurunkan tekanan darah</string>
+    <string name="benefits2">Menurunkan resiko kanker</string>
+    <string name="benefits3">Meredakan flu dan batuk</string>
+    <string name="benefits4">Melancarkan saluran pencernaan</string>
+    <string name="healthy1">Penyiraman bisa dilakukan sebanyak 2 kali untuk tanaman yang baru ditanam. Penyiraman dilakukan pada pagi dan sore hari. Setelah tanaman sudah cukup dewasa, frekuensi penyiraman dikurangi menjadi 1 kali sehari pada pagi hari.</string>
+    <string name="healthy2">Pupuk baru diberikan setelah tanaman sudah berumur 3—5 bulan. Pupuk yang diberikan adalah NPK (15-15-15) yang bisa Anda dapati di toko pertanian. Pupuk diberikan sebanyak 50—300 gram/pohon. Pemupukan selanjutnya bisa dilakukan setelah tanaman berumur 4 bulan hingga tanaman berbunga. Setelah pohon berusia 1—2 tahun, berikan NPK setahun sekali setelah proses panen raya berakhir.</string>
+    <string name="healthy3">Tunas liar atau tunas air pada pohon harus dipangkas karena bisa mengganggu pertumbuhan tanaman. Pemangkasan juga dilakukan ketika pohon sudah mencapai ketinggian 1,5—2 m dengan memilih tiga atau empat batang utama agar tajuk tanaman rimbun. Pemangkasan cabang yang lain dilakukan 1—2 cm dari batang utama sehingga luka pemangkasan tidak akan melukai batang utama. Pemangkasan juga dilakukan pada cabang yang tua, kering, dan tidak produktif.</string>
+    <string name="healthy4">Memangkas daun dan buah yang tidak sehat</string>
+
+
+    //LAYOUT
+    <string-array name="disease_layout">
+        <item>@layout/lettuce_healthy_detail_screen</item>
+        <item>@layout/aa_disease_detail_screen</item>
+        <item>@layout/aaa_disease_detail_screen</item>
+        <item>@layout/aaaa_disease_detail_screen</item>
+        <item>@layout/aaaaa_disease_detail_screen</item>
+        <item>@layout/aaaaaa_disease_detail_screen</item>
+    </string-array>
+
+
+    //PENYAKIT
+    <string name="tes1_cause">Buah yang terinfeksi busuk phytophthora tampak berwarna coklat keabu-abuan dan basah kuyup dengan bagian tengah berwarna hitam keabu-abuan. Penyakit ini muncul dalam bentuk pertumbuhan miselium putih bertepung di atas buah.</string>
+    <string name="tes1_cause2">Jamur yang menginfeksi buah dapat bersumber dari tanah, batang yang sakit kanker batang, buah yang sakit, dan tumbuhan inang lain. Phytophthora palmivora akan bertahan dalam tanah, dari sini jamur dapat terbawa oleh percikan air hujan ke buah-buah yang dekat tanah. Setelah mengadakan infeksi, dalam waktu beberapa hari jamur pada buah sudah dapat menghasilkan banyak sporangium (bagian tubuh jamur yang berfungsi sebagai tempat pembentukan spora). Sporangium ini dapat terbawa oleh percikan air, atau oleh angin, dan mencapai buah yang lebih tinggi.</string>
+    <string name="tes1_treatment">Memetik semua buah busuk yang dilakukan bersamaan dengan pemangkasan ataupun saat panen, kemudian dibenamkan ke dalam tanah sedalam 30 cm.</string>
+    <string name="tes1_treatment2">Pengaturan kelembaban kebun bisa dilakukan dengan memperbaiki drainase, memangkas tanaman dan pohon pelindung dengan teratur, dan dengan mengendalikan gulma. </string>
+    <string name="tes1_treatment3">Pemberian Dithane efektif dalam mengendalikan penyakit</string>
+
+    <string name="tes2_cause">Scab disebabkan oleh jamur yang memiliki gejala bulat telur, gabus, dan kerusakan berbentuk bulat pada permukaan buah jambu biji. Kerusakan ini mempengaruhi daging di bawahnya, mengurangi kualitas buah dan nilai produksi Jamur terutama mempengaruhi buah–buahan mentah, yang menciptakan gelap dan kerusakan kudis coklat berdiameter 2–4mm. Kulit buah di bawah proses pematangan berubah menjadi lunak dan menghiasi coklat muda hingga coklat tua. Kelembaban relatif tinggi merusak buah-buahan di permukaan tanah yang ditutupi dengan dedaunan tebal. Buah-buahan yang jatuh telah sangat dirugikan.</string>
+    <string name="tes2_treatment">Pertahankan jarak tanam yang direkomendasikan (5–6m × 5–6m).</string>
+    <string name="tes2_treatment2">Buang cabang yang berlebih dan rusak setelah panen</string>
+    <string name="tes2_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
+    <string name="tes2_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
+
+    <string name="tes3_cause">Scab disebabkan oleh jamur yang memiliki gejala bulat telur, gabus, dan kerusakan berbentuk bulat pada permukaan buah jambu biji. Kerusakan ini mempengaruhi daging di bawahnya, mengurangi kualitas buah dan nilai produksi Jamur terutama mempengaruhi buah–buahan mentah, yang menciptakan gelap dan kerusakan kudis coklat berdiameter 2–4mm. Kulit buah di bawah proses pematangan berubah menjadi lunak dan menghiasi coklat muda hingga coklat tua. Kelembaban relatif tinggi merusak buah-buahan di permukaan tanah yang ditutupi dengan dedaunan tebal. Buah-buahan yang jatuh telah sangat dirugikan.</string>
+    <string name="tes3_treatment">Pertahankan jarak tanam yang direkomendasikan (5–6m × 5–6m).</string>
+    <string name="tes3_treatment2">Buang cabang yang berlebih dan rusak setelah panen</string>
+    <string name="tes3_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
+    <string name="tes3_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
+
+    <string name="tes4_cause">Scab disebabkan oleh jamur yang memiliki gejala bulat telur, gabus, dan kerusakan berbentuk bulat pada permukaan buah jambu biji. Kerusakan ini mempengaruhi daging di bawahnya, mengurangi kualitas buah dan nilai produksi Jamur terutama mempengaruhi buah–buahan mentah, yang menciptakan gelap dan kerusakan kudis coklat berdiameter 2–4mm. Kulit buah di bawah proses pematangan berubah menjadi lunak dan menghiasi coklat muda hingga coklat tua. Kelembaban relatif tinggi merusak buah-buahan di permukaan tanah yang ditutupi dengan dedaunan tebal. Buah-buahan yang jatuh telah sangat dirugikan.</string>
+    <string name="tes4_treatment">Pertahankan jarak tanam yang direkomendasikan (5–6m × 5–6m).</string>
+    <string name="tes4_treatment2">Buang cabang yang berlebih dan rusak setelah panen</string>
+    <string name="tes4_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
+    <string name="tes4_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
+
+    <string name="tes5_cause">Scab disebabkan oleh jamur yang memiliki gejala bulat telur, gabus, dan kerusakan berbentuk bulat pada permukaan buah jambu biji. Kerusakan ini mempengaruhi daging di bawahnya, mengurangi kualitas buah dan nilai produksi Jamur terutama mempengaruhi buah–buahan mentah, yang menciptakan gelap dan kerusakan kudis coklat berdiameter 2–4mm. Kulit buah di bawah proses pematangan berubah menjadi lunak dan menghiasi coklat muda hingga coklat tua. Kelembaban relatif tinggi merusak buah-buahan di permukaan tanah yang ditutupi dengan dedaunan tebal. Buah-buahan yang jatuh telah sangat dirugikan.</string>
+    <string name="tes5_treatment">Pertahankan jarak tanam yang direkomendasikan (5–6m × 5–6m).</string>
+    <string name="tes5_treatment2">Buang cabang yang berlebih dan rusak setelah panen</string>
+    <string name="tes5_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
+    <string name="tes5_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
+
+    <string name="tes6_cause">Scab disebabkan oleh jamur yang memiliki gejala bulat telur, gabus, dan kerusakan berbentuk bulat pada permukaan buah jambu biji. Kerusakan ini mempengaruhi daging di bawahnya, mengurangi kualitas buah dan nilai produksi Jamur terutama mempengaruhi buah–buahan mentah, yang menciptakan gelap dan kerusakan kudis coklat berdiameter 2–4mm. Kulit buah di bawah proses pematangan berubah menjadi lunak dan menghiasi coklat muda hingga coklat tua. Kelembaban relatif tinggi merusak buah-buahan di permukaan tanah yang ditutupi dengan dedaunan tebal. Buah-buahan yang jatuh telah sangat dirugikan.</string>
+    <string name="tes6_treatment">Pertahankan jarak tanam yang direkomendasikan (5–6m × 5–6m).</string>
+    <string name="tes6_treatment2">Buang cabang yang berlebih dan rusak setelah panen</string>
+    <string name="tes6_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
+    <string name="tes6_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
+
+
 </resources>
