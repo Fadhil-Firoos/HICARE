@@ -50,22 +50,20 @@ class HomeFragment : Fragment() {
     }
 
 
-    fun recyclerView(){
+    private fun recyclerView() {
         binding.apply {
             rvListDiseases.layoutManager = GridLayoutManager(activity, 1)
 
-            diseaseAdapter= DiseaseAdapter(Diseases)
-            rvListDiseases.adapter=diseaseAdapter
+            rvListDiseases.adapter = diseaseAdapter
 
-            DiseaseAdapter.notifyDataSetChanged()
+            diseaseAdapter.notifyDataSetChanged()
             rvListDiseases.setHasFixedSize(true)
-            DiseaseAdapter.setOnItemClickCallback(object :
-                DiseaseAdapter.OnItemClickCallBack{
+
+            diseaseAdapter.setOnItemClickCallback(object : DiseaseAdapter.OnItemClickCallBack {
                 override fun onItemClicked(data: Disease) {
                     selectedDisease(data)
                 }
-            }
-            )
+            })
         }
     }
 
