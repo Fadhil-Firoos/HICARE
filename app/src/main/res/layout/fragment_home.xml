@@ -204,7 +204,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_list_diseases"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="840dp"
                 android:layout_marginHorizontal="10dp"
                 android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"

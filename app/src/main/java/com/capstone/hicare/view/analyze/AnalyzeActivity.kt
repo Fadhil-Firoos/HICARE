@@ -46,13 +46,6 @@ class AnalyzeActivity : AppCompatActivity() {
             galleryLauncher.launch("image/*")
         }
 
-
-
-        binding.goHome.setOnClickListener{
-            startActivity(Intent(this, MainActivity::class.java))
-        }
-
-
     }
 
     private val galleryLauncher = registerForActivityResult(

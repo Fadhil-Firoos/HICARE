@@ -14,13 +14,14 @@
         android:layout_height="300dp"
         android:contentDescription="Image placeholder"
         android:src="@drawable/sample"
-        app:layout_constraintBottom_toTopOf="@+id/buttonGallery"
+        app:layout_constraintBottom_toTopOf="@+id/hintTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:layout_marginTop="32dp"
         android:id="@+id/hintTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -31,48 +32,31 @@
         app:layout_constraintTop_toBottomOf="@id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonGallery"
+        app:layout_constraintBottom_toTopOf="@id/buttonAnalyze"
         android:padding="8dp" />
 
-    <Button
-        android:id="@+id/buttonGallery"
-        android:layout_width="155dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/green_light"
-        android:padding="8dp"
-        android:text="Gallery"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAnalyze"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/go_home"
-        android:layout_width="155dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/green_light"
-        android:padding="8dp"
-        android:text="Home"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAnalyze"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toEndOf="@+id/buttonGallery" />
-
-    <Button
+    <ImageView
         android:id="@+id/buttonAnalyze"
-        android:layout_width="221dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/green_light"
-        android:text="Analyze"
-        android:textColor="@color/black"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/scanner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hintTextView" />
+
+    <ImageView
+        android:id="@+id/buttonGallery"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/galery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAnalyze"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hintTextView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

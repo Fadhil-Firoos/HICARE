@@ -15,8 +15,7 @@ object DiseaseList {
 
     fun addDisease(resources: Resources): ArrayList<Disease> {
         prepare(resources)
-        val minLength = minOf(diseaseName.size, diseaseImage.length(), diseaseDetail.length(), diseaseSubName.size)
-        for (position in 0 until minLength) {
+        for (position in diseaseName.indices) {
             val disease = Disease(
                 diseaseName[position],
                 diseaseImage.getResourceId(position, -1),
