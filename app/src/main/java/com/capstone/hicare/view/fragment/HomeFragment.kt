@@ -42,6 +42,9 @@ class HomeFragment : Fragment() {
             (activity as MainActivity).navigateToAnalyzeActivity()
         }
 
+        binding.Article.setOnClickListener {
+            (activity as MainActivity).navigateToArticleActivity()
+        }
         return binding.root
     }
 

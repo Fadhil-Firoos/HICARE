@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityMainBinding
 import com.capstone.hicare.view.analyze.AnalyzeActivity
+import com.capstone.hicare.view.article.ArticleActivity
 import com.capstone.hicare.view.fragment.CameraFragment
 import com.capstone.hicare.view.fragment.HistoryFragment
 import com.capstone.hicare.view.fragment.HomeFragment
@@ -138,6 +139,12 @@ class MainActivity : AppCompatActivity() {
 
     fun navigateToAnalyzeActivity() {
         val intent = Intent(this, AnalyzeActivity::class.java)
+        startActivity(intent)
+    }
+
+
+    fun navigateToArticleActivity() {
+        val intent = Intent(this, ArticleActivity::class.java)
         startActivity(intent)
     }
 

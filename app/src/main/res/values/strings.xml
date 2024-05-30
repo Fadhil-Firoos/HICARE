@@ -111,4 +111,6 @@
 
     <string name="tab_text_1">Home</string>
     <string name="tab_text_2">Profile</string>
+    <string name="link">Baca Selengkapnya</string>
+    <string name="titleArticle">Judul Artikel</string>
 </resources>

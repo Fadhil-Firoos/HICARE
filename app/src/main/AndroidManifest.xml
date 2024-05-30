@@ -25,14 +25,15 @@
         android:theme="@style/Theme.HICARE"
         tools:targetApi="31">
         <activity
+            android:name=".view.article.ArticleActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.detail.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".view.analyze.AnalyzeActivity"
             android:exported="false"
-            android:theme="@style/Theme.HICARE.ActionBar">
-
-        </activity>
+            android:theme="@style/Theme.HICARE.ActionBar"></activity>
         <activity
             android:name=".view.splash.SplashActivity"
             android:exported="true"
@@ -46,11 +47,11 @@
         <activity
             android:name=".view.setting.SettingActivity"
             android:exported="false"
-            android:theme="@style/Theme.HICARE.ActionBar"></activity>
+            android:theme="@style/Theme.HICARE.ActionBar" />
         <activity
             android:name=".view.main.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.HICARE.ActionBar"></activity>
+            android:theme="@style/Theme.HICARE.ActionBar" />
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
