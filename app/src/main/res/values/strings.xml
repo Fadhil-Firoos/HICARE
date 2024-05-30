@@ -25,6 +25,8 @@
         <item><b>Tes 5</b></item>
         <item><b>Tes 6</b></item>
         <item><b>Tes 7</b></item>
+        <item><b>Tes 8</b></item>
+
     </string-array>
 
 
@@ -36,6 +38,8 @@
         <item><b>Tes 5</b></item>
         <item><b>Tes 6</b></item>
         <item><b>Tes 7</b></item>
+        <item><b>Tes 8</b></item>
+
     </string-array>
 
 
@@ -47,6 +51,8 @@
         <item>@drawable/sample</item>
         <item>@drawable/sample</item>
         <item>@drawable/sample</item>
+        <item>@drawable/sample</item>
+
     </string-array>
 
 
@@ -59,6 +65,7 @@
     <string name="healthy2">Pupuk baru diberikan setelah tanaman sudah berumur 3—5 bulan. Pupuk yang diberikan adalah NPK (15-15-15) yang bisa Anda dapati di toko pertanian. Pupuk diberikan sebanyak 50—300 gram/pohon. Pemupukan selanjutnya bisa dilakukan setelah tanaman berumur 4 bulan hingga tanaman berbunga. Setelah pohon berusia 1—2 tahun, berikan NPK setahun sekali setelah proses panen raya berakhir.</string>
     <string name="healthy3">Tunas liar atau tunas air pada pohon harus dipangkas karena bisa mengganggu pertumbuhan tanaman. Pemangkasan juga dilakukan ketika pohon sudah mencapai ketinggian 1,5—2 m dengan memilih tiga atau empat batang utama agar tajuk tanaman rimbun. Pemangkasan cabang yang lain dilakukan 1—2 cm dari batang utama sehingga luka pemangkasan tidak akan melukai batang utama. Pemangkasan juga dilakukan pada cabang yang tua, kering, dan tidak produktif.</string>
     <string name="healthy4">Memangkas daun dan buah yang tidak sehat</string>
+    <string name="healthy5">Memangkas daun dan buah yang tidak sehat</string>
 
 
     //LAYOUT
@@ -69,6 +76,8 @@
         <item>@layout/aaaa_disease_detail_screen</item>
         <item>@layout/aaaaa_disease_detail_screen</item>
         <item>@layout/aaaaaa_disease_detail_screen</item>
+        <item>@layout/aaaaaa_disease_detail_screen</item>
+
     </string-array>
 
 

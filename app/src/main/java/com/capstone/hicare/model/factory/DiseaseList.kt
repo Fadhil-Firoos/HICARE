@@ -15,14 +15,14 @@ object DiseaseList {
 
     fun addDisease(resources: Resources): ArrayList<Disease> {
         prepare(resources)
-        for (position in diseaseName.indices) {
+        val minLength = minOf(diseaseName.size, diseaseImage.length(), diseaseDetail.length(), diseaseSubName.size)
+        for (position in 0 until minLength) {
             val disease = Disease(
                 diseaseName[position],
                 diseaseImage.getResourceId(position, -1),
                 diseaseDetail.getResourceId(position, -1),
                 diseaseSubName[position]
             )
-            Log.d("DiseaseList", "Number of diseases loaded: ${Diseases.size}")
             Diseases.add(disease)
         }
 
