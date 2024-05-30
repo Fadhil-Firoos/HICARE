@@ -94,7 +94,7 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         addDisease(resources)
-
+        diseaseAdapter.notifyDataSetChanged()
     }
 
     companion object {

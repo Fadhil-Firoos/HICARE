@@ -1,5 +1,6 @@
 package com.capstone.hicare.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
@@ -43,8 +44,10 @@ class DiseaseAdapter (private val diseaseList: ArrayList<Disease>): RecyclerView
         holder.setIsRecyclable(false)
     }
 
-    override fun getItemCount(): Int = filterDiseaseList.size
-
+    override fun getItemCount(): Int {
+        Log.d("DiseaseAdapter", "Number of items in adapter: ${filterDiseaseList.size}")
+        return filterDiseaseList.size
+    }
 
     override fun getFilter(): Filter {
         return object : Filter() {
