@@ -13,11 +13,11 @@ import java.util.Locale
 import com.capstone.hicare.databinding.ItemDiseaseBinding
 
 
-class DiseaseAdapter (private val DiseaseList: ArrayList<Disease>): RecyclerView.Adapter<DiseaseAdapter.RecyclerViewHolder>(),Filterable {
+class DiseaseAdapter (private val diseaseList: ArrayList<Disease>): RecyclerView.Adapter<DiseaseAdapter.RecyclerViewHolder>(),Filterable {
 
 
     private lateinit var onItemClickCallBack: OnItemClickCallBack
-    private var filterDiseaseList: ArrayList<Disease> = DiseaseList
+    private var filterDiseaseList: ArrayList<Disease> = diseaseList
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
         val binding = ItemDiseaseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -26,14 +26,14 @@ class DiseaseAdapter (private val DiseaseList: ArrayList<Disease>): RecyclerView
 
     inner class RecyclerViewHolder(private val binding: ItemDiseaseBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(guavaDisease: Disease) {
+        fun bind(Disease: Disease) {
             Glide.with(itemView.context)
-                .load(guavaDisease.diseaseImage)
+                .load(Disease.diseaseImage)
                 .apply(RequestOptions().override(300, 300))
                 .into(binding.ivItemPicture)
-            binding.tvItemName.text = guavaDisease.diseaseName
-            binding.tvSubName.text = guavaDisease.diseaseSubName
-            itemView.setOnClickListener { onItemClickCallBack.onItemClicked(guavaDisease) }
+            binding.tvItemName.text = Disease.diseaseName
+            binding.tvSubName.text = Disease.diseaseSubName
+            itemView.setOnClickListener { onItemClickCallBack.onItemClicked(Disease) }
         }
     }
 
@@ -51,10 +51,10 @@ class DiseaseAdapter (private val DiseaseList: ArrayList<Disease>): RecyclerView
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val itemSearch = constraint.toString()
                 filterDiseaseList = if (itemSearch.isEmpty()) {
-                    DiseaseList
+                    diseaseList
                 } else {
                     val List = ArrayList<Disease>()
-                    for (item in DiseaseList) {
+                    for (item in diseaseList) {
                         if (item.diseaseName?.toLowerCase(Locale.ROOT)?.contains(
                                 itemSearch.toLowerCase(
                                     Locale.ROOT

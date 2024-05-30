@@ -44,7 +44,6 @@
         android:layout_width="105dp"
         android:layout_height="8dp"
         android:background="@color/green_light"
-        app:cornersRadius="10dp"
         app:layout_constraintStart_toStartOf="@+id/t_desc"
         app:layout_constraintTop_toBottomOf="@+id/t_desc" />
 

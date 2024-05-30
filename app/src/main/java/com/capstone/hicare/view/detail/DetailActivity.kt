@@ -18,7 +18,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         actionBar()
-        selectedGuavaDisease()
+        selectedDisease()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -30,7 +30,7 @@ class DetailActivity : AppCompatActivity() {
         if (itemId == android.R.id.home) onBackPressed()
     }
 
-    private fun selectedGuavaDisease() {
+    private fun selectedDisease() {
         val diseaseName = intent.getStringExtra(EXTRA_DISEASE_NAME).toString()
         val diseaseImage = intent.getIntExtra(EXTRA_DISEASE_IMAGE, 0)
         val diseaseDetail = intent.getIntExtra(EXTRA_DISEASE_DETAIL, 0)

@@ -18,13 +18,9 @@
             android:contentDescription="disease_images"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:fillColor="#FFFFFFFF"
-            app:indicatorGravity="top|center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:pageColor="#00000000"
-            app:radius="6dp"
             app:strokeColor="#FF777777" />
 
         <View
@@ -32,7 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginBottom="25dp"
-            app:layout_constraintBottom_toBottomOf="@id/riv_picture_received" />
+            app:layout_constraintBottom_toBottomOf="@id/riv_picture_received"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

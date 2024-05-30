@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
     }
 
 
-    private fun recyclerView() {
+    fun recyclerView() {
         binding.apply {
             rvListDiseases.layoutManager = GridLayoutManager(activity, 1)
 

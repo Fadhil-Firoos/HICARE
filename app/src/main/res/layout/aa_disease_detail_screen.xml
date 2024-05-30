@@ -44,7 +44,6 @@
         android:layout_width="105dp"
         android:layout_height="8dp"
         android:background="@color/green_light"
-        app:cornersRadius="10dp"
         app:layout_constraintStart_toStartOf="@+id/t_desc"
         app:layout_constraintTop_toBottomOf="@+id/t_desc" />
 
@@ -183,7 +182,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
-        android:text="@string/tes1_treatment4"
+        android:text="@string/tes1_treatment3"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
