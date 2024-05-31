@@ -28,6 +28,7 @@
             android:elevation="10dp">
 
             <ImageView
+                android:contentDescription="@string/disease_images"
                 android:id="@+id/iv_item_picture"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -41,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="10dp"
-            android:text="Lettuce Disease"
+            android:text="@string/lettuce_disease"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="16sp"
@@ -54,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Lettuce Disease"
+            android:text="@string/lettuce_disease"
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/card_iv"

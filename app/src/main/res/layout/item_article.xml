@@ -48,6 +48,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
+            android:contentDescription="@string/article_image"
             android:id="@+id/imgNews"
             android:layout_width="100dp"
             android:layout_height="100dp"

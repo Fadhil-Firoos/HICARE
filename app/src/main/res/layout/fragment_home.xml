@@ -29,6 +29,7 @@
             android:padding="16dp">
 
             <ImageView
+                android:contentDescription="@string/capture"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:src="@drawable/baseline_camera_24" />
@@ -43,6 +44,7 @@
                 android:textSize="18sp" />
 
             <ImageView
+                android:contentDescription="@string/capture"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:src="@drawable/img_disease" />
@@ -69,6 +71,7 @@
             android:padding="16dp">
 
             <ImageView
+                android:contentDescription="@string/galery_diagnose_icon"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:src="@drawable/pic_diagnose" />
@@ -83,6 +86,7 @@
                 android:textSize="18sp" />
 
             <ImageView
+                android:contentDescription="@string/galery_diagnose_icon"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:src="@drawable/img_diagnose" />
@@ -121,6 +125,7 @@
 
 
             <ImageView
+                android:contentDescription="@string/history_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_article_24" />
@@ -150,12 +155,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="More Article"
+                android:text="@string/more_article"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageView
+                android:contentDescription="@string/article_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_newspaper_24" />
@@ -181,7 +187,7 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginStart="10dp"
-                android:text="Disease Lettuce"
+                android:text="@string/disease_lettuce"
                 android:textColor="#000"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -198,7 +204,7 @@
                 android:layout_marginTop="5dp"
                 android:textStyle="italic"
                 android:textColor="@color/black"
-                android:text="Types of diseases in lettuce"
+                android:text="@string/types_of_diseases_in_lettuce"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_disease_header" />

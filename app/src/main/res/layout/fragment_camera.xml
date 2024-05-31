@@ -19,6 +19,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
+        android:contentDescription="@string/capture"
         android:id="@+id/capture_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -29,6 +30,7 @@
         app:srcCompat="@drawable/baseline_camera_alt_24" />
 
     <ImageView
+        android:contentDescription="@string/switch_camera"
     android:id="@+id/switch_camera"
     android:layout_width="40dp"
     android:layout_height="40dp"

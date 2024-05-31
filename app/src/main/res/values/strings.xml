@@ -69,12 +69,12 @@
     //LAYOUT
     <string-array name="disease_layout">
         <item>@layout/lettuce_healthy_detail_screen</item>
-        <item>@layout/aa_disease_detail_screen</item>
-        <item>@layout/aaa_disease_detail_screen</item>
-        <item>@layout/aaaa_disease_detail_screen</item>
-        <item>@layout/aaaaa_disease_detail_screen</item>
-        <item>@layout/aaaaaa_disease_detail_screen</item>
-        <item>@layout/aaaaaaa_disease_detail_screen</item>
+        <item>@layout/wilt_and_leaf_blight_disease_detail_screen</item>
+        <item>@layout/viral_disease_detail_screen</item>
+        <item>@layout/powdery_mildew_disease_detail_screen</item>
+        <item>@layout/downy_mildew_disease_detail_screen</item>
+        <item>@layout/bacterial_disease_detail_screen</item>
+        <item>@layout/septoria_blight_disease_detail_screen</item>
     </string-array>
 
 
@@ -121,4 +121,20 @@
 
     <string name="link">Baca Selengkapnya</string>
     <string name="titleArticle">Judul Artikel</string>
+    <string name="image_placeholder">Image placeholder</string>
+    <string name="please_insert_a_picture_of_lettuce">Please insert a picture of lettuce</string>
+    <string name="button_analyze">button analyze</string>
+    <string name="button_galery">button galery</string>
+    <string name="disease_images">disease images</string>
+    <string name="name_of_disease">Name of disease</string>
+    <string name="capture">capture</string>
+    <string name="switch_camera">switch camera</string>
+    <string name="galery_diagnose_icon">galery diagnose icon</string>
+    <string name="history_icon">history icon</string>
+    <string name="more_article">More Article</string>
+    <string name="article_icon">article icon</string>
+    <string name="disease_lettuce">Disease Lettuce</string>
+    <string name="types_of_diseases_in_lettuce">Types of diseases in lettuce</string>
+    <string name="article_image">article image</string>
+    <string name="lettuce_disease">Lettuce Disease</string>
 </resources>

@@ -12,7 +12,7 @@
         android:id="@+id/imageView"
         android:layout_width="350dp"
         android:layout_height="300dp"
-        android:contentDescription="Image placeholder"
+        android:contentDescription="@string/image_placeholder"
         android:src="@drawable/sample"
         app:layout_constraintBottom_toTopOf="@+id/hintTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:id="@+id/hintTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Please insert a picture of lettuce"
+        android:text="@string/please_insert_a_picture_of_lettuce"
         android:textStyle="bold"
         android:textColor="@android:color/black"
         android:gravity="center"
@@ -36,6 +36,7 @@
         android:padding="8dp" />
 
     <ImageView
+        android:contentDescription="@string/button_analyze"
         android:id="@+id/buttonAnalyze"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -47,6 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/hintTextView" />
 
     <ImageView
+        android:contentDescription="@string/button_galery"
         android:id="@+id/buttonGallery"
         android:layout_width="40dp"
         android:layout_height="40dp"
