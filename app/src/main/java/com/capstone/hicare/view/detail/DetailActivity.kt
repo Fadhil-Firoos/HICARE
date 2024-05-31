@@ -1,40 +1,40 @@
 package com.capstone.hicare.view.detail
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-
 import android.view.MenuItem
 import com.bumptech.glide.Glide
+import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityDetailBinding
+    private lateinit var binding: ActivityDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        actionBar()
-        selectedDisease()
+        val diseaseName = intent.getStringExtra(EXTRA_DISEASE_NAME)
+        val diseaseImage = intent.getIntExtra(EXTRA_DISEASE_IMAGE, -1)
+        val diseaseDetail = intent.getIntExtra(EXTRA_DISEASE_DETAIL, -1)
+
+        actionBar(diseaseName)
+        selectedDisease(diseaseName, diseaseImage, diseaseDetail)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        onNavigateUp(item.itemId)
-        return super.onOptionsItemSelected(item)
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
-    private fun onNavigateUp(itemId: Int) {
-        if (itemId == android.R.id.home) onBackPressed()
-    }
-
-    private fun selectedDisease() {
-        val diseaseName = intent.getStringExtra(EXTRA_DISEASE_NAME).toString()
-        val diseaseImage = intent.getIntExtra(EXTRA_DISEASE_IMAGE, 0)
-        val diseaseDetail = intent.getIntExtra(EXTRA_DISEASE_DETAIL, 0)
-
+    private fun selectedDisease(diseaseName: String?, diseaseImage: Int, diseaseDetail: Int) {
         Glide.with(this).load(diseaseImage).into(binding.rivPictureReceived)
         binding.tvNameReceived.text = diseaseName
         if (diseaseDetail != 0) {
@@ -45,11 +45,11 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun actionBar() {
+    private fun actionBar(diseaseName: String?) {
         supportActionBar?.apply {
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
-            title = intent.getStringExtra(EXTRA_DISEASE_NAME).toString()
+            title = diseaseName
         }
     }
 

@@ -76,7 +76,8 @@
         <item>@layout/aaaa_disease_detail_screen</item>
         <item>@layout/aaaaa_disease_detail_screen</item>
         <item>@layout/aaaaaa_disease_detail_screen</item>
-        <item>@layout/aaaaaa_disease_detail_screen</item>
+        <item>@layout/aaaaaaa_disease_detail_screen</item>
+
 
     </string-array>
 
@@ -120,6 +121,8 @@
 
     <string name="tab_text_1">Home</string>
     <string name="tab_text_2">Profile</string>
+
+
     <string name="link">Baca Selengkapnya</string>
     <string name="titleArticle">Judul Artikel</string>
 </resources>

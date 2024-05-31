@@ -1,5 +1,6 @@
 package com.capstone.hicare.adapter
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,6 +13,10 @@ import com.capstone.hicare.model.Disease
 import java.util.ArrayList
 import java.util.Locale
 import com.capstone.hicare.databinding.ItemDiseaseBinding
+import com.capstone.hicare.view.detail.DetailActivity
+import com.capstone.hicare.view.detail.DetailActivity.Companion.EXTRA_DISEASE_DETAIL
+import com.capstone.hicare.view.detail.DetailActivity.Companion.EXTRA_DISEASE_IMAGE
+import com.capstone.hicare.view.detail.DetailActivity.Companion.EXTRA_DISEASE_NAME
 
 
 class DiseaseAdapter (private val diseaseList: ArrayList<Disease>): RecyclerView.Adapter<DiseaseAdapter.RecyclerViewHolder>(),Filterable {
@@ -27,22 +32,32 @@ class DiseaseAdapter (private val diseaseList: ArrayList<Disease>): RecyclerView
 
     inner class RecyclerViewHolder(private val binding: ItemDiseaseBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(Disease: Disease) {
+        fun bind(disease: Disease) {
             Glide.with(itemView.context)
-                .load(Disease.diseaseImage)
+                .load(disease.diseaseImage)
                 .apply(RequestOptions().override(300, 300))
                 .into(binding.ivItemPicture)
-            binding.tvItemName.text = Disease.diseaseName
-            binding.tvSubName.text = Disease.diseaseSubName
-            itemView.setOnClickListener { onItemClickCallBack.onItemClicked(Disease) }
+            binding.tvItemName.text = disease.diseaseName
+            binding.tvSubName.text = disease.diseaseSubName
+            itemView.setOnClickListener { onItemClickCallBack.onItemClicked(disease) }
         }
     }
 
+
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
         holder.bind(filterDiseaseList[position])
-
-        holder.setIsRecyclable(false)
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val disease = filterDiseaseList[position]
+            val intent = Intent(context, DetailActivity::class.java).apply {
+                putExtra(EXTRA_DISEASE_NAME, disease.diseaseName)
+                putExtra(EXTRA_DISEASE_IMAGE, disease.diseaseImage ?: -1)
+                putExtra(EXTRA_DISEASE_DETAIL, disease.diseaseDetail ?: -1)
+            }
+            context.startActivity(intent)
+        }
     }
+
 
     override fun getItemCount(): Int {
         Log.d("DiseaseAdapter", "Number of items in adapter: ${filterDiseaseList.size}")

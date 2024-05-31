@@ -60,14 +60,14 @@ class HomeFragment : Fragment() {
         binding.apply {
             rvListDiseases.layoutManager = GridLayoutManager(activity, 1)
 
-            diseaseAdapter= DiseaseAdapter(Diseases)
-            rvListDiseases.adapter=diseaseAdapter
+            diseaseAdapter = DiseaseAdapter(Diseases)
+            rvListDiseases.adapter = diseaseAdapter
 
             diseaseAdapter.notifyDataSetChanged()
             rvListDiseases.setHasFixedSize(true)
 
             diseaseAdapter.setOnItemClickCallback(object :
-                DiseaseAdapter.OnItemClickCallBack{
+                DiseaseAdapter.OnItemClickCallBack {
                 override fun onItemClicked(data: Disease) {
                     selectedDisease(data)
                 }
