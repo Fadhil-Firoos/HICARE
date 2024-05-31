@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TES HEALTHY"
+        android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +59,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="1"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/myRectangleView"
         app:layout_constraintTop_toBottomOf="@+id/myRectangleView" />
 
@@ -70,6 +71,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:textColor="@color/black"
         android:text="@string/benefits"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,7 +87,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="2"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/myRectangleView"
         app:layout_constraintTop_toBottomOf="@+id/benefit1" />
 
@@ -97,6 +99,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:textColor="@color/black"
         android:text="@string/benefits2"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +116,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="3"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/myRectangleView"
         app:layout_constraintTop_toBottomOf="@+id/benefit2" />
 
@@ -125,6 +128,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:textColor="@color/black"
         android:text="@string/benefits3"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,7 +144,7 @@
         android:layout_marginTop="12dp"
         android:gravity="center"
         android:text="4"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/myRectangleView"
         app:layout_constraintTop_toBottomOf="@+id/benefit3" />
 
@@ -152,6 +156,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:textColor="@color/black"
         android:text="@string/benefits4"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -188,7 +193,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="1"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintRight_toLeftOf="@+id/pengendalian1"
         app:layout_constraintStart_toStartOf="@+id/myRectangleView2"
         app:layout_constraintTop_toBottomOf="@+id/myRectangleView2" />
@@ -201,6 +206,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:textColor="@color/black"
         android:text="@string/healthy1"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -216,7 +222,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="2"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tv_num1"
         app:layout_constraintTop_toBottomOf="@+id/pengendalian1" />
 
@@ -228,6 +234,7 @@
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
         android:text="@string/healthy2"
+        android:textColor="@color/black"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -242,7 +249,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="3"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tv_num2"
         app:layout_constraintTop_toBottomOf="@+id/pengendalian2" />
 
@@ -254,6 +261,7 @@
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
         android:text="@string/healthy3"
+        android:textColor="@color/black"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -268,7 +276,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="4"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tv_num2"
         app:layout_constraintTop_toBottomOf="@+id/pengendalian3" />
 
@@ -278,6 +286,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginEnd="16dp"
+        android:textColor="@color/black"
         android:layout_weight="1"
         android:text="@string/healthy4"
         android:textSize="14dp"

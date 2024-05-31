@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tv_bhs_indo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,6 +54,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:textColor="@color/black"
         android:justificationMode="inter_word"
         android:text="@string/tes4_cause"
         android:textSize="14dp"
@@ -90,7 +92,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="1"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintRight_toLeftOf="@+id/pengendalian1"
         app:layout_constraintStart_toStartOf="@+id/myRectangleView2"
         app:layout_constraintTop_toBottomOf="@+id/myRectangleView2" />
@@ -103,6 +105,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:textColor="@color/black"
         android:text="@string/tes4_treatment"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +121,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="2"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tv_num1"
         app:layout_constraintTop_toBottomOf="@+id/pengendalian1" />
 
@@ -129,6 +132,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:textColor="@color/black"
         android:text="@string/tes4_treatment2"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -144,7 +148,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="3"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tv_num2"
         app:layout_constraintTop_toBottomOf="@+id/pengendalian2" />
 
@@ -156,8 +160,10 @@
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
         android:text="@string/tes4_treatment3"
+        android:textColor="@color/black"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_num3" />
 
@@ -170,7 +176,7 @@
         android:background="@color/green_light"
         android:gravity="center"
         android:text="4"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tv_num3"
         app:layout_constraintTop_toBottomOf="@+id/pengendalian3" />
 
@@ -181,6 +187,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:textColor="@color/black"
         android:text="@string/tes4_treatment4"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"

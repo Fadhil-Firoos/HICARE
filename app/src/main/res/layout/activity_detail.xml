@@ -12,13 +12,14 @@
 
         <ImageView
             android:id="@+id/riv_picture_received"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
             android:clickable="true"
             android:contentDescription="disease_images"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:strokeColor="#FF777777" />
@@ -27,15 +28,17 @@
             android:id="@+id/lineOnCarousel"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="40dp"
             app:layout_constraintBottom_toBottomOf="@id/riv_picture_received"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="155dp"
             android:background="@color/green_light"
-            app:layout_constraintTop_toBottomOf="@id/lineOnCarousel">
+            app:layout_constraintTop_toBottomOf="@id/lineOnCarousel"
+            tools:layout_editor_absoluteX="0dp">
 
             <View
                 android:id="@+id/myRectangleView"
@@ -52,9 +55,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="label"
+                android:text="Name of disease"
                 android:textColor="@color/black"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/myRectangleView" />
