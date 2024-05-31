@@ -33,7 +33,8 @@
         <activity
             android:name=".view.analyze.AnalyzeActivity"
             android:exported="false"
-            android:theme="@style/Theme.HICARE.ActionBar"></activity>
+            android:theme="@style/Theme.HICARE.ActionBar">
+        </activity>
         <activity
             android:name=".view.splash.SplashActivity"
             android:exported="true"
@@ -46,8 +47,7 @@
         </activity>
         <activity
             android:name=".view.setting.SettingActivity"
-            android:exported="false"
-            android:theme="@style/Theme.HICARE.ActionBar" />
+            android:exported="false" />
         <activity
             android:name=".view.main.MainActivity"
             android:exported="true"

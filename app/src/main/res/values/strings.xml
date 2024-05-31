@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">HICARE</string>
-    <string name="splash">splash\n</string>
+    <string name="splash">splash</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="setting">setting</string>
@@ -18,38 +18,38 @@
 
 
     <string-array name="DiseaseName">
-        <item><b>Tes 1</b></item>
-        <item><b>Tes 2</b></item>
-        <item><b>Tes 3</b></item>
-        <item><b>Tes 4</b></item>
-        <item><b>Tes 5</b></item>
-        <item><b>Tes 6</b></item>
-        <item><b>Tes 7</b></item>
+        <item><b>Lettuce Healthy</b></item>
+        <item><b>Wilt and leaf blight</b></item>
+        <item><b>Viral</b></item>
+        <item><b>Powdery Mildew</b></item>
+        <item><b>Downy Mildew</b></item>
+        <item><b>Bacterial</b></item>
+        <item><b>Septoria Blight</b></item>
         <item><b>Tes 8</b></item>
 
     </string-array>
 
 
     <string-array name="DiseaseNameIndo">
-        <item><b>Tes 1</b></item>
-        <item><b>Tes 2</b></item>
-        <item><b>Tes 3</b></item>
-        <item><b>Tes 4</b></item>
-        <item><b>Tes 5</b></item>
-        <item><b>Tes 6</b></item>
-        <item><b>Tes 7</b></item>
+        <item><b>Selada Sehat</b></item>
+        <item><b>Layu dan bercak daun</b></item>
+        <item><b>Penyakit Virus</b></item>
+        <item><b>Embun Tepung</b></item>
+        <item><b>Embun Bulu</b></item>
+        <item><b>Penyakit Bakteri</b></item>
+        <item><b>Bercak Septoria</b></item>
         <item><b>Tes 8</b></item>
     </string-array>
 
 
     <string-array name="DiseaseImage">
-        <item>@drawable/sample</item>
-        <item>@drawable/sample</item>
-        <item>@drawable/sample</item>
-        <item>@drawable/sample</item>
-        <item>@drawable/sample</item>
-        <item>@drawable/sample</item>
-        <item>@drawable/sample</item>
+        <item>@drawable/lettuce_healthy</item>
+        <item>@drawable/wilt_and_leaf_blight</item>
+        <item>@drawable/virus</item>
+        <item>@drawable/powdery_mildew</item>
+        <item>@drawable/downy_mildew</item>
+        <item>@drawable/bacterial</item>
+        <item>@drawable/septoria_blight</item>
         <item>@drawable/sample</item>
     </string-array>
 
@@ -75,8 +75,6 @@
         <item>@layout/aaaaa_disease_detail_screen</item>
         <item>@layout/aaaaaa_disease_detail_screen</item>
         <item>@layout/aaaaaaa_disease_detail_screen</item>
-
-
     </string-array>
 
 
