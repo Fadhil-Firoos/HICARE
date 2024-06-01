@@ -5,46 +5,45 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.capstone.hicare.MainModel
 import com.capstone.hicare.R
-import com.capstone.hicare.api.ArticleItem
+import kotlin.collections.ArrayList
 
-class ArticleAdapter : ListAdapter<ArticleItem, ArticleAdapter.ArticleViewHolder>(Comparator()) {
+class ArticleAdapter (var results: ArrayList<MainModel.Result>, val listener: OnAdapterListener):
+    RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_article, parent, false)
-        return ArticleViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder (
+        LayoutInflater.from(parent.context).inflate(R.layout.article_adapter, parent, false)
+    )
+
+    override fun getItemCount() = results.size
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val result = results[position]
+        holder.tvArticle.text = result.title // Memperbaiki penggunaan tvArticle
+        Glide.with(holder.itemView)
+            .load(result.image)
+            .placeholder(R.drawable.sample)
+            .error(R.drawable.sample)
+            .centerCrop()
+            .into(holder.imagePlaceholder) // Memperbaiki penggunaan imagePlaceholder
+        holder.itemView.setOnClickListener { listener.onClick(result) }
     }
 
-    override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
-        val newsItem = getItem(position)
-        holder.bind(newsItem)
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvArticle: TextView = itemView.findViewById(R.id.tvarticle) // Menambahkan inisialisasi tvArticle
+        val imagePlaceholder: ImageView = itemView.findViewById(R.id.imageplaceholder) // Menambahkan inisialisasi imagePlaceholder
     }
 
-    inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val titleTextView: TextView = itemView.findViewById(R.id.tvTitle)
-        private val newsImageView: ImageView = itemView.findViewById(R.id.imgNews)
-
-        fun bind(articleItem: ArticleItem) {
-            titleTextView.text = articleItem.name
-            itemView.findViewById<TextView>(R.id.tvLink).apply {
-                text = "Baca Selengkapnya"
-                //setTag(R.id.tvLink, articleItem.url)
-                //visibility = if (articleItem.url != null) View.VISIBLE else View.GONE
-            }
-
-        }
+    fun setData(data: List<MainModel.Result>) {
+        this.results.clear()
+        this.results.addAll(data)
+        notifyDataSetChanged()
     }
 
-    class Comparator : DiffUtil.ItemCallback<ArticleItem>() {
-        override fun areItemsTheSame(oldItem: ArticleItem, newItem: ArticleItem): Boolean {
-            return oldItem.name == newItem.name
-        }
-
-        override fun areContentsTheSame(oldItem: ArticleItem, newItem: ArticleItem): Boolean {
-            return oldItem == newItem
-        }
+    interface OnAdapterListener {
+        fun onClick(result: MainModel.Result)
     }
 }
