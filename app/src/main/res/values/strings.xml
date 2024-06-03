@@ -137,4 +137,5 @@
     <string name="types_of_diseases_in_lettuce">Types of diseases in lettuce</string>
     <string name="article_image">article image</string>
     <string name="lettuce_disease">Lettuce Disease</string>
+    <string name="image_classifier_failed">Klasifikasi gagal</string>
 </resources>
