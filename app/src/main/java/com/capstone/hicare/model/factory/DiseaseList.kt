@@ -29,7 +29,6 @@ object DiseaseList {
         return Diseases
     }
 
-
     private fun prepare(resources: Resources){
         diseaseName = resources.getStringArray(R.array.DiseaseName)
         diseaseImage = resources.obtainTypedArray(R.array.DiseaseImage)

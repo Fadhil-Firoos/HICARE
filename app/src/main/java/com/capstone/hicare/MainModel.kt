@@ -1,7 +1,19 @@
 package com.capstone.hicare
 
-data class MainModel (
-    val result: ArrayList<Result>
+import java.util.Date
+
+data class MainModel(
+    val status: String,
+    val data: Data
 ) {
-    data class Result (val id: Int, val title: String, val image: String)
+    data class Data(
+        val texts: List<Result>
+    )
+
+    data class Result(
+        val name: String,
+        val url_image: String,
+        val url_artikel: String,
+        val timestamp : String
+    )
 }

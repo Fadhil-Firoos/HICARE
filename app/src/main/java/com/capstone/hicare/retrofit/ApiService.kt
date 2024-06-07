@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiService {
 
-    var BASE_URL:String="https://demo.lazday.com/rest-api-sample/"
+    var BASE_URL:String="https://cc-capstone-booksedit-usyfirh4bq-et.a.run.app/"
     val endpoint: ApiEndpoint
         get() {
             val retrofit = Retrofit.Builder()
@@ -21,13 +21,14 @@ object ApiService {
 
         }
 
-    private val client: OkHttpClient
-        get() {
-            val interceptor = HttpLoggingInterceptor()
-            interceptor.level = HttpLoggingInterceptor.Level.BODY
-
-            return OkHttpClient.Builder()
-                .addInterceptor(interceptor)
-                .build()
+    private val client: OkHttpClient by lazy {
+        val interceptor = HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
         }
+
+        OkHttpClient.Builder()
+            .addInterceptor(interceptor)
+            .build()
+    }
+
 }

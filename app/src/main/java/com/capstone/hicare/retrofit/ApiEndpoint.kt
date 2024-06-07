@@ -6,6 +6,6 @@ import retrofit2.http.*
 
 interface ApiEndpoint {
 
-    @GET("data.php")
+    @GET("texts")
     fun data(): Call<MainModel>
 }
