@@ -9,9 +9,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.capstone.hicare.MainModel
 import com.capstone.hicare.R
 import com.capstone.hicare.adapter.ArticleAdapter
+import com.capstone.hicare.model.ArticleModel
 import com.capstone.hicare.retrofit.ApiService
 import retrofit2.Call
 import retrofit2.Callback
@@ -46,14 +46,14 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
 
     private fun getDataFromApi() {
         showLoading(true)
-        ApiService.endpoint.data().enqueue(object : Callback<MainModel> {
-            override fun onFailure(call: Call<MainModel>, t: Throwable) {
+        ApiService.endpoint.data().enqueue(object : Callback<ArticleModel> {
+            override fun onFailure(call: Call<ArticleModel>, t: Throwable) {
                 printLog(t.toString())
                 showLoading(false)
                 showError("Failed to load data")
             }
 
-            override fun onResponse(call: Call<MainModel>, response: Response<MainModel>) {
+            override fun onResponse(call: Call<ArticleModel>, response: Response<ArticleModel>) {
                 showLoading(false)
                 if (response.isSuccessful) {
                     response.body()?.let {
@@ -78,15 +78,15 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
         progressBar.visibility = if (loading) View.VISIBLE else View.GONE
     }
 
-    private fun showResult(mainModel: MainModel) {
-        articleAdapter.setData(mainModel.data.texts)
+    private fun showResult(articleModel: ArticleModel) {
+        articleAdapter.setData(articleModel.data.texts)
     }
 
     private fun showError(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    override fun onClick(result: MainModel.Result) {
+    override fun onClick(result: ArticleModel.Result) {
         startActivity(
             Intent(this@ArticleActivity, DetailArticleActivity::class.java)
                 .putExtra("intent_title", result.name)

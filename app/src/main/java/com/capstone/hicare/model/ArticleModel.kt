@@ -1,8 +1,7 @@
-package com.capstone.hicare
+package com.capstone.hicare.model
 
-import java.util.Date
 
-data class MainModel(
+data class ArticleModel(
     val status: String,
     val data: Data
 ) {

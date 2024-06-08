@@ -13,13 +13,6 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val imageUriString = intent.getStringExtra(IMAGE_URI)
-        val imageUri = Uri.parse(imageUriString)
-
-        binding.resultImageView.setImageURI(imageUri)
     }
 
-    companion object {
-        const val IMAGE_URI = "image_uri"
-    }
 }

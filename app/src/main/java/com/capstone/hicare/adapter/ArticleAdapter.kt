@@ -7,11 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.capstone.hicare.MainModel
 import com.capstone.hicare.R
+import com.capstone.hicare.model.ArticleModel
 
 class ArticleAdapter(
-    private var results: MutableList<MainModel.Result>,
+    private var results: MutableList<ArticleModel.Result>,
     private val listener: OnAdapterListener
 ) : RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
 
@@ -30,13 +30,13 @@ class ArticleAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         private val tvArticle: TextView = itemView.findViewById(R.id.tvarticle)
         private val imagePlaceholder: ImageView = itemView.findViewById(R.id.imageplaceholder)
-        private lateinit var currentResult: MainModel.Result
+        private lateinit var currentResult: ArticleModel.Result
 
         init {
             itemView.setOnClickListener(this)
         }
 
-        fun bind(result: MainModel.Result) {
+        fun bind(result: ArticleModel.Result) {
             currentResult = result
             tvArticle.text = result.name
             Glide.with(itemView)
@@ -52,13 +52,13 @@ class ArticleAdapter(
         }
     }
 
-    fun setData(data: List<MainModel.Result>) {
+    fun setData(data: List<ArticleModel.Result>) {
         results.clear()
         results.addAll(data)
         notifyDataSetChanged()
     }
 
     interface OnAdapterListener {
-        fun onClick(result: MainModel.Result)
+        fun onClick(result: ArticleModel.Result)
     }
 }

@@ -7,22 +7,19 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.widget.Toast
 import android.view.MenuItem
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityAnalyzeBinding
 import com.capstone.hicare.utils.uriToFile
-import com.capstone.hicare.view.result.ResultActivity
+import com.capstone.hicare.view.main.MainActivity
 import com.capstone.hicare.view.setting.SettingActivity
 import com.yalantis.ucrop.UCrop
 
 class AnalyzeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAnalyzeBinding
     private var currentImageUri: Uri? = null
-    private var croppedImageUri: Uri? = null
-    private var isImageSelected: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,16 +40,12 @@ class AnalyzeActivity : AppCompatActivity() {
         imageUriString?.let {
             currentImageUri = Uri.parse(it)
             binding.imageView.setImageURI(currentImageUri)
-            isImageSelected = true
         }
 
         binding.buttonGallery.setOnClickListener {
             galleryLauncher.launch("image/*")
         }
 
-        binding.buttonAnalyze.setOnClickListener {
-            handleAnalyzeButtonClick()
-        }
     }
 
     private val galleryLauncher = registerForActivityResult(
@@ -60,7 +53,6 @@ class AnalyzeActivity : AppCompatActivity() {
     ) { uri ->
         uri?.let {
             currentImageUri = it
-            isImageSelected = true
             cropImage(it)
         }
     }
@@ -72,7 +64,7 @@ class AnalyzeActivity : AppCompatActivity() {
             val resultUri = UCrop.getOutput(result.data!!)
             resultUri?.let {
                 binding.imageView.setImageURI(it)
-                croppedImageUri = it
+                currentImageUri = it
             }
         } else if (result.resultCode == UCrop.RESULT_ERROR) {
             val error = UCrop.getError(result.data!!)
@@ -93,25 +85,6 @@ class AnalyzeActivity : AppCompatActivity() {
         cropImageLauncher.launch(intent)
     }
 
-    private fun handleAnalyzeButtonClick() {
-        if (isImageSelected) {
-            analyzeImage()
-        } else {
-            showToast(getString(R.string.image_classifier_failed))
-        }
-    }
-
-    private fun analyzeImage() {
-        val intent = Intent(this, ResultActivity::class.java)
-        croppedImageUri?.let { uri ->
-            intent.putExtra(ResultActivity.IMAGE_URI, uri.toString())
-            startActivity(intent)
-        } ?: showToast(getString(R.string.image_classifier_failed))
-    }
-
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
@@ -128,12 +101,8 @@ class AnalyzeActivity : AppCompatActivity() {
                 startActivity(Intent(this, SettingActivity::class.java))
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    companion object {
-        const val TAG = "ImagePicker"
-        const val IMAGE_URI = "image_uri"
     }
 }
