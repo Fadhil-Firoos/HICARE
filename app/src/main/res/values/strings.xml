@@ -138,4 +138,7 @@
     <string name="article_image">article image</string>
     <string name="lettuce_disease">Lettuce Disease</string>
     <string name="image_classifier_failed">Klasifikasi gagal</string>
+    <string name="hasil_analisis">hasil analisis\n</string>
+    <string name="result">Result</string>
+    <string name="simpan">Simpan</string>
 </resources>

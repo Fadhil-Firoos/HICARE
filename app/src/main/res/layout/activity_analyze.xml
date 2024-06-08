@@ -10,12 +10,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="350dp"
-        android:layout_height="300dp"
+        android:layout_width="396dp"
+        android:layout_height="274dp"
         android:contentDescription="@string/image_placeholder"
-        android:src="@drawable/sample"
         app:layout_constraintBottom_toTopOf="@+id/hintTextView"
         app:layout_constraintEnd_toEndOf="parent"
+        android:adjustViewBounds="true"
         app:layout_constraintHeight_percent="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
