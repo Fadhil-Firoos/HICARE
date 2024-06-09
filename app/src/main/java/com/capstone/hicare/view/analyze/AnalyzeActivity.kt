@@ -4,8 +4,10 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Canvas
 import android.graphics.Color
-import android.graphics.Matrix
+import android.graphics.Paint
+import android.graphics.Rect
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
@@ -16,7 +18,6 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityAnalyzeBinding
 import com.capstone.hicare.model.factory.Classifier
@@ -37,8 +38,6 @@ class AnalyzeActivity : AppCompatActivity() {
     private val mModelPath = "lettuce.tflite"
     private val mLabelPath = "label.txt"
     private val mSamplePath = "not image.jpg"
-    private val mCameraRequestCode = 0
-    private val mGalleryRequestCode = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,11 +56,7 @@ class AnalyzeActivity : AppCompatActivity() {
         }
         mClassifier = Classifier(assets, mModelPath, mLabelPath, mInputSize)
 
-        resources.assets.open(mSamplePath).use {
-            mBitmap = BitmapFactory.decodeStream(it)
-            mBitmap = Bitmap.createScaledBitmap(mBitmap, mInputSize, mInputSize, true)
-            binding.imageView.setImageBitmap(mBitmap)
-        }
+
 
         binding.buttonGallery.setOnClickListener {
             galleryLauncher.launch("image/*")
@@ -79,7 +74,7 @@ class AnalyzeActivity : AppCompatActivity() {
         } else {
             // Handle placeholder or default image
             resources.assets.open(mSamplePath).use {
-                mBitmap = BitmapFactory.decodeStream(it)
+                mBitmap = BitmapFactory.decodeResource(resources, R.drawable.sample)
                 mBitmap = Bitmap.createScaledBitmap(mBitmap, mInputSize, mInputSize, true)
                 binding.imageView.setImageBitmap(mBitmap)
             }
@@ -88,29 +83,26 @@ class AnalyzeActivity : AppCompatActivity() {
             val results = mClassifier.recognizeImage(mBitmap).firstOrNull()
             val intent = Intent(this, ResultActivity::class.java)
 
-
             Toast.makeText(this, results?.title, Toast.LENGTH_LONG).show()
 
-            intent.putExtra("penyakit", results?.title + "\nAkurasi: " + results?.confidence + "%")
+            intent.putExtra("penyakit", results?.title + "\n"+"\nAkurasi: " + results?.confidence + "%")
             intent.putExtra("nama", results?.title)
 
             val stream = ByteArrayOutputStream()
-            mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+            mBitmap.compress(Bitmap.CompressFormat.PNG, 50, stream)
             val byteArray = stream.toByteArray()
 
             intent.putExtra("image", byteArray)
 
             startActivity(intent)
         }
-
-
     }
 
     private val galleryLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri ->
         uri?.let {
-            binding.imageView.setImageResource(R.drawable.sample) // Set placeholder
+            binding.imageView.setImageResource(R.drawable.sample)
             currentImageUri = it
             cropImage(it)
         }
@@ -141,7 +133,7 @@ class AnalyzeActivity : AppCompatActivity() {
     private fun cropImage(uri: Uri): Uri {
         val destinationUri = Uri.fromFile(uriToFile(uri, this))
         val options = UCrop.Options().apply {
-            setCompressionQuality(100)
+            setCompressionQuality(50)
             setFreeStyleCropEnabled(true)
         }
         val intent = UCrop.of(uri, destinationUri)
@@ -171,51 +163,27 @@ class AnalyzeActivity : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == mCameraRequestCode) {
-            if (resultCode == RESULT_OK && data != null) {
-                binding.imageView.setImageResource(R.drawable.sample) // Set placeholder
-                mBitmap = data.extras!!.get("data") as Bitmap
-                mBitmap = scaleImage(mBitmap)
-                binding.imageView.setImageBitmap(mBitmap)
-            } else {
-                Toast.makeText(this, "Camera cancel..", Toast.LENGTH_LONG).show()
-            }
-        } else if (requestCode == mGalleryRequestCode) {
-            if (data != null) {
-                binding.imageView.setImageResource(R.drawable.sample) // Set placeholder
-                val uri = data.data
-                try {
-                    mBitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-                mBitmap = scaleImage(mBitmap)
-                binding.imageView.setImageBitmap(mBitmap)
-            }
-        } else {
-            Toast.makeText(this, "Unrecognized request code", Toast.LENGTH_LONG).show()
-        }
-    }
-
     private fun scaleImage(bitmap: Bitmap?): Bitmap {
         val originalWidth = bitmap!!.width
         val originalHeight = bitmap.height
         val aspectRatio = originalWidth.toFloat() / originalHeight.toFloat()
 
-        // Sesuaikan dimensi gambar ke aspek rasio yang lebih kecil
         val targetWidth: Int
         val targetHeight: Int
-        if (aspectRatio > 1) { // Gambar lebih lebar
+        if (aspectRatio > 1) {
             targetWidth = mInputSize
             targetHeight = (mInputSize / aspectRatio).toInt()
-        } else { // Gambar lebih tinggi atau kotak
+        } else {
             targetWidth = (mInputSize * aspectRatio).toInt()
             targetHeight = mInputSize
         }
 
-        return Bitmap.createScaledBitmap(bitmap, targetWidth, targetHeight, true)
+        val scaledBitmap = Bitmap.createBitmap(targetWidth, targetHeight, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(scaledBitmap)
+        val paint = Paint(Paint.FILTER_BITMAP_FLAG)
+        canvas.drawBitmap(bitmap, null, Rect(0, 0, targetWidth, targetHeight), paint)
+
+        return scaledBitmap
     }
 
 }
