@@ -13,6 +13,7 @@ data class ArticleModel(
         val name: String,
         val url_image: String,
         val url_artikel: String,
+        val deskripsi: String,
         val timestamp : String
     )
 }

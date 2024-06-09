@@ -88,6 +88,9 @@ class AnalyzeActivity : AppCompatActivity() {
             val results = mClassifier.recognizeImage(mBitmap).firstOrNull()
             val intent = Intent(this, ResultActivity::class.java)
 
+
+            Toast.makeText(this, results?.title, Toast.LENGTH_LONG).show()
+
             intent.putExtra("penyakit", results?.title + "\nAkurasi: " + results?.confidence + "%")
             intent.putExtra("nama", results?.title)
 
@@ -199,10 +202,20 @@ class AnalyzeActivity : AppCompatActivity() {
     private fun scaleImage(bitmap: Bitmap?): Bitmap {
         val originalWidth = bitmap!!.width
         val originalHeight = bitmap.height
-        val scaleWidth = mInputSize.toFloat() / originalWidth
-        val scaleHeight = mInputSize.toFloat() / originalHeight
-        val matrix = Matrix()
-        matrix.postScale(scaleWidth, scaleHeight)
-        return Bitmap.createBitmap(bitmap, 0, 0, originalWidth, originalHeight, matrix, true)
+        val aspectRatio = originalWidth.toFloat() / originalHeight.toFloat()
+
+        // Sesuaikan dimensi gambar ke aspek rasio yang lebih kecil
+        val targetWidth: Int
+        val targetHeight: Int
+        if (aspectRatio > 1) { // Gambar lebih lebar
+            targetWidth = mInputSize
+            targetHeight = (mInputSize / aspectRatio).toInt()
+        } else { // Gambar lebih tinggi atau kotak
+            targetWidth = (mInputSize * aspectRatio).toInt()
+            targetHeight = mInputSize
+        }
+
+        return Bitmap.createScaledBitmap(bitmap, targetWidth, targetHeight, true)
     }
+
 }

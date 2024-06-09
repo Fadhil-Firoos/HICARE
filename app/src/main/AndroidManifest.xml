@@ -32,6 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".view.article.ArticleActivity"
+            android:theme="@style/Theme.HICARE.ActionBar"
             android:exported="false" />
         <activity
             android:name=".view.detail.DetailActivity"

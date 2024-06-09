@@ -29,6 +29,7 @@ class ArticleAdapter(
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         private val tvArticle: TextView = itemView.findViewById(R.id.tvarticle)
+        private val tvdeskripsi: TextView = itemView.findViewById(R.id.deskripsi)
         private val imagePlaceholder: ImageView = itemView.findViewById(R.id.imageplaceholder)
         private lateinit var currentResult: ArticleModel.Result
 
@@ -39,6 +40,7 @@ class ArticleAdapter(
         fun bind(result: ArticleModel.Result) {
             currentResult = result
             tvArticle.text = result.name
+            tvdeskripsi.text = result.deskripsi
             Glide.with(itemView)
                 .load(result.url_image)
                 .placeholder(R.drawable.sample)

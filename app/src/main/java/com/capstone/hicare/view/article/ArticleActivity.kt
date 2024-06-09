@@ -1,16 +1,21 @@
 package com.capstone.hicare.view.article
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.capstone.hicare.R
 import com.capstone.hicare.adapter.ArticleAdapter
+import com.capstone.hicare.databinding.ActivityMainBinding
 import com.capstone.hicare.model.ArticleModel
 import com.capstone.hicare.retrofit.ApiService
 import retrofit2.Call
@@ -26,7 +31,13 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_article)
-        supportActionBar?.title = "Avengers"
+        enableEdgeToEdge()
+        window.statusBarColor = getColor(R.color.white)
+        supportActionBar?.apply {
+            title = "Article"
+            setBackgroundDrawable(ColorDrawable(Color.WHITE))
+            elevation = 0f
+        }
 
         progressBar = findViewById(R.id.progressBar)
 
@@ -87,10 +98,9 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
     }
 
     override fun onClick(result: ArticleModel.Result) {
-        startActivity(
-            Intent(this@ArticleActivity, DetailArticleActivity::class.java)
-                .putExtra("intent_title", result.name)
-                .putExtra("intent_image", result.url_image)
-        )
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(result.url_artikel)
+        startActivity(intent)
     }
+
 }
