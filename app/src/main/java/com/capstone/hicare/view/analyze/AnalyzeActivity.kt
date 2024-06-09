@@ -56,8 +56,6 @@ class AnalyzeActivity : AppCompatActivity() {
         }
         mClassifier = Classifier(assets, mModelPath, mLabelPath, mInputSize)
 
-
-
         binding.buttonGallery.setOnClickListener {
             galleryLauncher.launch("image/*")
         }
@@ -89,7 +87,7 @@ class AnalyzeActivity : AppCompatActivity() {
             intent.putExtra("nama", results?.title)
 
             val stream = ByteArrayOutputStream()
-            mBitmap.compress(Bitmap.CompressFormat.PNG, 50, stream)
+            mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream) // Set compression to 100 to avoid loss in quality
             val byteArray = stream.toByteArray()
 
             intent.putExtra("image", byteArray)
@@ -121,8 +119,11 @@ class AnalyzeActivity : AppCompatActivity() {
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
-                mBitmap = scaleImage(mBitmap)
-                binding.imageView.setImageBitmap(mBitmap)
+                binding.imageView.post {
+                    // Perform image scaling after the image view has been laid out
+                    mBitmap = scaleImage(mBitmap)
+                    binding.imageView.setImageBitmap(mBitmap)
+                }
             }
         } else if (result.resultCode == UCrop.RESULT_ERROR) {
             val error = UCrop.getError(result.data!!)
@@ -130,10 +131,10 @@ class AnalyzeActivity : AppCompatActivity() {
         }
     }
 
-    private fun cropImage(uri: Uri): Uri {
+    private fun cropImage(uri: Uri) {
         val destinationUri = Uri.fromFile(uriToFile(uri, this))
         val options = UCrop.Options().apply {
-            setCompressionQuality(50)
+            setCompressionQuality(100) // Set compression to 100 to avoid loss in quality
             setFreeStyleCropEnabled(true)
         }
         val intent = UCrop.of(uri, destinationUri)
@@ -141,8 +142,8 @@ class AnalyzeActivity : AppCompatActivity() {
             .getIntent(this)
 
         cropImageLauncher.launch(intent)
-        return destinationUri
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
@@ -153,7 +154,7 @@ class AnalyzeActivity : AppCompatActivity() {
         return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
-                return true
+                true
             }
             R.id.btn_setting -> {
                 startActivity(Intent(this, SettingActivity::class.java))
@@ -178,12 +179,7 @@ class AnalyzeActivity : AppCompatActivity() {
             targetHeight = mInputSize
         }
 
-        val scaledBitmap = Bitmap.createBitmap(targetWidth, targetHeight, Bitmap.Config.ARGB_8888)
-        val canvas = Canvas(scaledBitmap)
-        val paint = Paint(Paint.FILTER_BITMAP_FLAG)
-        canvas.drawBitmap(bitmap, null, Rect(0, 0, targetWidth, targetHeight), paint)
-
+        val scaledBitmap = Bitmap.createScaledBitmap(bitmap, targetWidth, targetHeight, true)
         return scaledBitmap
     }
-
 }

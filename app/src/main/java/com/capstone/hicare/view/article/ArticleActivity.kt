@@ -102,5 +102,4 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
         intent.data = Uri.parse(result.url_artikel)
         startActivity(intent)
     }
-
 }

@@ -95,7 +95,10 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
                 pq.add(Classifier.Recognition("" + i,
                     if (LABEL_LIST.size > i) LABEL_LIST[i] else "Unknown", confidence*100)
                 )
+            } else {
+                pq.add(Classifier.Recognition("" + i, "tidak terdefinisi", confidence*100))
             }
+
         }
         Log.d("Classifier", "pqsize:(%d)".format(pq.size))
 

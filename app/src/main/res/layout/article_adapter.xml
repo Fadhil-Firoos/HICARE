@@ -69,7 +69,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:onClick="openNewsUrl"
                 android:text="@string/link"
                 android:textColor="@color/blue"
                 android:textSize="12sp"
