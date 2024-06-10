@@ -1,5 +1,8 @@
 package com.capstone.hicare.view.result
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -13,10 +16,20 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityResultBinding
+import com.capstone.hicare.history.AppDatabase
+import com.capstone.hicare.history.PredictionHistory
+import com.capstone.hicare.view.fragment.HistoryFragment
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.tensorflow.lite.task.vision.classifier.Classifications
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
@@ -26,11 +39,8 @@ class ResultActivity : AppCompatActivity() {
         val imageByteArray = intent.getByteArrayExtra("image")
         val bitmap = imageByteArray?.let { BitmapFactory.decodeByteArray(imageByteArray, 0, it.size) }
 
-//        val penyakit: TextView = findViewById(R.id.penyakit)
-//        val gambar: ImageView = findViewById(R.id.foto)
-//        val penyebab: TextView = findViewById(R.id.txtpenyebab)
-//        val txtObat: TextView = findViewById(R.id.txttxtObat)
-//        val btnKembali: Button = findViewById(R.id.btkembali)
+
+
 
         binding.apply {
             penyakit.text = "Nama : " + intent.getStringExtra("penyakit")
@@ -127,7 +137,75 @@ class ResultActivity : AppCompatActivity() {
 
 
 
+        binding.save.setOnClickListener {
+            val imageByteArray = intent.getByteArrayExtra("image")
+            val result = binding.penyakit.text.toString()
 
+            if (imageByteArray != null) {
+                val imageUri = Uri.parse(imageByteArray.toString())
+                showToast("Data Tersimpan")
+                savePredictionToDatabase(imageUri, result)
+            } else {
+                showToast("No image URI provided")
+                finish()
+            }
+        }
+
+    }
+
+
+
+
+
+
+    private fun moveToHistory(imageUri: Uri, result: String) {
+        val intent = Intent(this, HistoryFragment::class.java)
+        intent.putExtra(RESULT_TEXT, result)
+        intent.putExtra(IMAGE_URI, imageUri.toString())
+        setResult(RESULT_OK, intent)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun savePredictionToDatabase(imageUri: Uri, result: String) {
+        val imageByteArray = intent.getByteArrayExtra("image")
+        val result = binding.penyakit.text.toString()
+
+        if (imageByteArray != null) {
+            val fileName = "cropped_image_${System.currentTimeMillis()}.jpg"
+            val outputFile = File(cacheDir, fileName)
+            FileOutputStream(outputFile).use { outputStream ->
+                outputStream.write(imageByteArray)
+            }
+            val prediction = PredictionHistory(imagePath = outputFile.absolutePath, result = result)
+            GlobalScope.launch(Dispatchers.IO) {
+                val database = AppDatabase.getDatabase(applicationContext)
+                try {
+                    database.predictionHistoryDao().insertPrediction(prediction)
+                    Log.d(TAG, "Prediction saved successfully: $prediction")
+                    val predictions = database.predictionHistoryDao().getAllPredictions()
+                    Log.d(TAG, "All predictions after save: $predictions")
+                    moveToHistory(Uri.fromFile(outputFile), result)
+                } catch (e: Exception) {
+                    Log.e(TAG, "Failed to save prediction: $prediction", e)
+                }
+            }
+        } else {
+            Log.e(TAG, "Image byte array is null, cannot save prediction to database.")
+        }
+
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+
+    companion object {
+        const val IMAGE_URI = "image"
+        const val TAG = "imagePicker"
+        const val RESULT_TEXT = "result_text"
+        const val REQUEST_HISTORY_UPDATE = 1
 
     }
 

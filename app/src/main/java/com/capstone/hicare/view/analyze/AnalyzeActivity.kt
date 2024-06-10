@@ -37,7 +37,7 @@ class AnalyzeActivity : AppCompatActivity() {
     private val mInputSize = 256
     private val mModelPath = "lettuce.tflite"
     private val mLabelPath = "label.txt"
-    private val mSamplePath = "not image.jpg"
+    private val mSamplePath = R.drawable.sample
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,9 +59,11 @@ class AnalyzeActivity : AppCompatActivity() {
         binding.buttonGallery.setOnClickListener {
             galleryLauncher.launch("image/*")
         }
+        var imageUri: Uri?
         val imageUriString = intent.getStringExtra("image_uri")
         if (imageUriString != null) {
-            val imageUri = Uri.parse(imageUriString)
+            imageUri = Uri.parse(imageUriString)
+            currentImageUri = imageUri // Assigning currentImageUri
             try {
                 mBitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, imageUri)
                 mBitmap = scaleImage(mBitmap)
@@ -69,13 +71,12 @@ class AnalyzeActivity : AppCompatActivity() {
             } catch (e: IOException) {
                 e.printStackTrace()
             }
-        } else {
+        }
+        else {
             // Handle placeholder or default image
-            resources.assets.open(mSamplePath).use {
-                mBitmap = BitmapFactory.decodeResource(resources, R.drawable.sample)
-                mBitmap = Bitmap.createScaledBitmap(mBitmap, mInputSize, mInputSize, true)
-                binding.imageView.setImageBitmap(mBitmap)
-            }
+            mBitmap = BitmapFactory.decodeResource(resources, mSamplePath)
+            mBitmap = Bitmap.createScaledBitmap(mBitmap, mInputSize, mInputSize, true)
+            binding.imageView.setImageBitmap(mBitmap)
         }
         binding.buttonAnalyze.setOnClickListener {
             val results = mClassifier.recognizeImage(mBitmap).firstOrNull()
@@ -83,7 +84,7 @@ class AnalyzeActivity : AppCompatActivity() {
 
             Toast.makeText(this, results?.title, Toast.LENGTH_LONG).show()
 
-            intent.putExtra("penyakit", results?.title + "\n"+"\nAkurasi: " + results?.confidence + "%")
+            intent.putExtra("penyakit", results?.title + "\n" + "\nAkurasi: " + results?.confidence + "%")
             intent.putExtra("nama", results?.title)
 
             val stream = ByteArrayOutputStream()
@@ -100,7 +101,6 @@ class AnalyzeActivity : AppCompatActivity() {
         ActivityResultContracts.GetContent()
     ) { uri ->
         uri?.let {
-            binding.imageView.setImageResource(R.drawable.sample)
             currentImageUri = it
             cropImage(it)
         }
@@ -134,7 +134,6 @@ class AnalyzeActivity : AppCompatActivity() {
     private fun cropImage(uri: Uri) {
         val destinationUri = Uri.fromFile(uriToFile(uri, this))
         val options = UCrop.Options().apply {
-            setCompressionQuality(100) // Set compression to 100 to avoid loss in quality
             setFreeStyleCropEnabled(true)
         }
         val intent = UCrop.of(uri, destinationUri)
@@ -143,7 +142,6 @@ class AnalyzeActivity : AppCompatActivity() {
 
         cropImageLauncher.launch(intent)
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
@@ -179,7 +177,6 @@ class AnalyzeActivity : AppCompatActivity() {
             targetHeight = mInputSize
         }
 
-        val scaledBitmap = Bitmap.createScaledBitmap(bitmap, targetWidth, targetHeight, true)
-        return scaledBitmap
+        return Bitmap.createScaledBitmap(bitmap, targetWidth, targetHeight, true)
     }
 }
