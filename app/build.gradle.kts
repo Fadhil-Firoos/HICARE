@@ -19,7 +19,6 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "ARTICLE_API_URL", "\"http://localhost:7500\"")
         vectorDrawables.useSupportLibrary = true
 
     }

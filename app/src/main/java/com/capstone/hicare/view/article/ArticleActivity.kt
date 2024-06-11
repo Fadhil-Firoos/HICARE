@@ -33,12 +33,15 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
         setContentView(R.layout.activity_article)
         enableEdgeToEdge()
         window.statusBarColor = getColor(R.color.white)
+
         supportActionBar?.apply {
-            title = "Article"
-            setBackgroundDrawable(ColorDrawable(Color.WHITE))
+            title = ""
+            setHomeButtonEnabled(true)
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.arrow_back_left)
+            setBackgroundDrawable(ColorDrawable(Color.parseColor("#00000000")))
             elevation = 0f
         }
-
         progressBar = findViewById(R.id.progressBar)
 
         setupRecyclerView()

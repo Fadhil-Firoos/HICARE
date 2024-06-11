@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -38,7 +40,6 @@ class ResultActivity : AppCompatActivity() {
         val nama = intent.getStringExtra("nama")
         val imageByteArray = intent.getByteArrayExtra("image")
         val bitmap = imageByteArray?.let { BitmapFactory.decodeByteArray(imageByteArray, 0, it.size) }
-
 
 
 
@@ -158,14 +159,7 @@ class ResultActivity : AppCompatActivity() {
 
 
 
-    private fun moveToHistory(imageUri: Uri, result: String) {
-        val intent = Intent(this, HistoryFragment::class.java)
-        intent.putExtra(RESULT_TEXT, result)
-        intent.putExtra(IMAGE_URI, imageUri.toString())
-        setResult(RESULT_OK, intent)
-        startActivity(intent)
-        finish()
-    }
+
 
     private fun savePredictionToDatabase(imageUri: Uri, result: String) {
         val imageByteArray = intent.getByteArrayExtra("image")
@@ -185,7 +179,6 @@ class ResultActivity : AppCompatActivity() {
                     Log.d(TAG, "Prediction saved successfully: $prediction")
                     val predictions = database.predictionHistoryDao().getAllPredictions()
                     Log.d(TAG, "All predictions after save: $predictions")
-                    moveToHistory(Uri.fromFile(outputFile), result)
                 } catch (e: Exception) {
                     Log.e(TAG, "Failed to save prediction: $prediction", e)
                 }

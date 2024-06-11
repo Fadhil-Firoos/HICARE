@@ -114,7 +114,13 @@ class MainActivity : AppCompatActivity() {
                 setBackgroundDrawable(ColorDrawable(Color.WHITE))
                 elevation = 0f
             }
+            if (fragment is HistoryFragment) {
 
+                layoutParams.bottomMargin = resources.getDimensionPixelSize(R.dimen.margin_zero)
+                myTextView.layoutParams = layoutParams
+                supportActionBar?.hide()
+
+            }
         }
 
         supportFragmentManager
@@ -135,7 +141,6 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(fragment)
         updateBottomNavigation(3)
     }
-
 
     fun navigateToAnalyzeActivity() {
         val intent = Intent(this, AnalyzeActivity::class.java)

@@ -51,7 +51,7 @@ class AnalyzeActivity : AppCompatActivity() {
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.arrow_back_left)
-            setBackgroundDrawable(ColorDrawable(Color.WHITE))
+            setBackgroundDrawable(ColorDrawable(Color.parseColor("#B9F5D3")))
             elevation = 0f
         }
         mClassifier = Classifier(assets, mModelPath, mLabelPath, mInputSize)
