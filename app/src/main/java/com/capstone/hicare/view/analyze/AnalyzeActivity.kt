@@ -15,6 +15,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,7 @@ import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityAnalyzeBinding
 import com.capstone.hicare.model.factory.Classifier
 import com.capstone.hicare.utils.uriToFile
+import com.capstone.hicare.view.chat.ChatActivity
 import com.capstone.hicare.view.result.ResultActivity
 import com.capstone.hicare.view.setting.SettingActivity
 import com.yalantis.ucrop.UCrop
@@ -96,7 +98,6 @@ class AnalyzeActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
     private val galleryLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri ->

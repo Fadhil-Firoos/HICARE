@@ -25,4 +25,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "HICARE"
 include(":app")
- 
+include(":app")
+include(":myapplication")

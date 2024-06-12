@@ -95,13 +95,14 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/LastDiagnoseHeader"
+        android:id="@+id/Chat"
         android:layout_width="150dp"
         android:layout_height="56dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/green_light"
         app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
+        android:onClick="openChatActivity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DiagnoseFromGallery"
         app:layout_constraintEnd_toStartOf="@+id/Article">
@@ -118,17 +119,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/last_diagnose"
+                android:text="@string/chat_with_ai"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
 
             <ImageView
-                android:contentDescription="@string/history_icon"
+                android:contentDescription="@string/ask_ai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/baseline_article_24" />
+                android:src="@drawable/baseline_help_24" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -141,7 +142,7 @@
         app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/LastDiagnoseHeader"
+        app:layout_constraintStart_toEndOf="@+id/Chat"
         app:layout_constraintTop_toBottomOf="@+id/DiagnoseFromGallery">
 
         <LinearLayout
@@ -167,6 +168,9 @@
                 android:src="@drawable/baseline_newspaper_24" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -174,7 +178,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LastDiagnoseHeader">
+        app:layout_constraintTop_toBottomOf="@+id/Chat">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

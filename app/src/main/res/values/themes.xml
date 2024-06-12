@@ -9,7 +9,7 @@
         <item name="android:statusBarColor">@color/white</item>
     </style>
 
-    <style name="Theme.HICARE.ActionBar" parent="Theme.Material3.DayNight" >
+    <style name="Theme.HICARE.ActionBar" parent="Theme.Material3.DayNight">
 
     </style>
 
@@ -21,4 +21,6 @@
         <item name="android:background">@color/black_overlay</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
+
+    <style name="Theme.ChatView" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

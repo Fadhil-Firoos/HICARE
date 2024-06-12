@@ -1,5 +1,6 @@
 package com.capstone.hicare.view.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,10 +14,12 @@ import com.capstone.hicare.databinding.FragmentHomeBinding
 import com.capstone.hicare.model.Disease
 import com.capstone.hicare.model.factory.DiseaseList.Diseases
 import com.capstone.hicare.model.factory.DiseaseList.addDisease
+import com.capstone.hicare.view.chat.ChatActivity
 import com.capstone.hicare.view.detail.DetailActivity.Companion.EXTRA_DISEASE_DETAIL
 import com.capstone.hicare.view.detail.DetailActivity.Companion.EXTRA_DISEASE_IMAGE
 import com.capstone.hicare.view.detail.DetailActivity.Companion.EXTRA_DISEASE_NAME
 import com.capstone.hicare.view.main.MainActivity
+
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -34,9 +37,6 @@ class HomeFragment : Fragment() {
             (activity as MainActivity).navigateToCameraFragment()
         }
 
-        binding.LastDiagnoseHeader.setOnClickListener {
-            (activity as MainActivity).navigateToHistoryFragment()
-        }
 
         binding.DiagnoseFromGallery.setOnClickListener {
             (activity as MainActivity).navigateToAnalyzeActivity()
@@ -45,7 +45,18 @@ class HomeFragment : Fragment() {
         binding.Article.setOnClickListener {
             (activity as MainActivity).navigateToArticleActivity()
         }
+
+        binding.Chat.setOnClickListener {
+            openChatActivity(it)
+        }
+
         return binding.root
+
+
+    }
+    fun openChatActivity(view: View) {
+        val intent = Intent(activity, ChatActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

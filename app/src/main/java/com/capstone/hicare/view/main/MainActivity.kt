@@ -16,6 +16,7 @@ import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityMainBinding
 import com.capstone.hicare.view.analyze.AnalyzeActivity
 import com.capstone.hicare.view.article.ArticleActivity
+import com.capstone.hicare.view.chat.ChatActivity
 import com.capstone.hicare.view.fragment.CameraFragment
 import com.capstone.hicare.view.fragment.HistoryFragment
 import com.capstone.hicare.view.fragment.HomeFragment
@@ -136,11 +137,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun navigateToHistoryFragment() {
-        fragment = HistoryFragment()
-        replaceFragment(fragment)
-        updateBottomNavigation(3)
-    }
 
     fun navigateToAnalyzeActivity() {
         val intent = Intent(this, AnalyzeActivity::class.java)
@@ -153,6 +149,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun openChatActivity(view: View) {
+        val intent = Intent(this, ChatActivity::class.java)
+        startActivity(intent)
+    }
 
     private fun updateBottomNavigation(index: Int) {
         val bottomNavigation = findViewById<CurvedBottomNavigation>(R.id.bottomNavigation)

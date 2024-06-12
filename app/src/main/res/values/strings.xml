@@ -142,4 +142,6 @@
     <string name="result">Result</string>
     <string name="simpan">Simpan</string>
     <string name="deskripsi">Deskripsi</string>
+    <string name="ask_ai">Ask AI</string>
+    <string name="chat_with_ai">Chat with AI</string>
 </resources>

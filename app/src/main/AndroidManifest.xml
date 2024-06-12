@@ -24,20 +24,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HICARE"
         tools:targetApi="31">
-        <activity android:name=".view.result.ResultActivity">
-    </activity>
+        <activity
+            android:name=".view.chat.ChatActivity"
+            android:exported="false" />
+
+        <activity android:name=".view.result.ResultActivity" />
         <activity
             android:name=".view.article.ArticleActivity"
-            android:theme="@style/Theme.HICARE"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.HICARE" />
         <activity
             android:name=".view.detail.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".view.analyze.AnalyzeActivity"
             android:exported="false"
-            android:theme="@style/Theme.HICARE.ActionBar">
-        </activity>
+            android:theme="@style/Theme.HICARE.ActionBar" />
         <activity
             android:name=".view.splash.SplashActivity"
             android:exported="true"
