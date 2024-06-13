@@ -75,7 +75,6 @@ class AnalyzeActivity : AppCompatActivity() {
             }
         }
         else {
-            // Handle placeholder or default image
             mBitmap = BitmapFactory.decodeResource(resources, mSamplePath)
             mBitmap = Bitmap.createScaledBitmap(mBitmap, mInputSize, mInputSize, true)
             binding.imageView.setImageBitmap(mBitmap)
@@ -121,7 +120,6 @@ class AnalyzeActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
                 binding.imageView.post {
-                    // Perform image scaling after the image view has been laid out
                     mBitmap = scaleImage(mBitmap)
                     binding.imageView.setImageBitmap(mBitmap)
                 }

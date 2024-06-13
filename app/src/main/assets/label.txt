@@ -1,7 +1,8 @@
-Lettuce Healthy
-Wilt and leaf blight
-Viral
-Powdery Mildew
-Downy Mildew
 Bacterial
+Downy Mildew
+Healthy
+Powdery Mildew
 Septoria Blight
+Undefine
+Viral
+Wilt and leaf blight

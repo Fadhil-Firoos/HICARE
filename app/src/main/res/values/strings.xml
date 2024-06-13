@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">HICARE</string>
     <string name="splash">splash</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="setting">setting</string>
     <string name="identify_disease">Identify Disease</string>
@@ -60,10 +59,9 @@
     <string name="benefits3">Meredakan flu dan batuk</string>
     <string name="benefits4">Melancarkan saluran pencernaan</string>
     <string name="healthy1">Penyiraman bisa dilakukan sebanyak 2 kali untuk tanaman yang baru ditanam. Penyiraman dilakukan pada pagi dan sore hari. Setelah tanaman sudah cukup dewasa, frekuensi penyiraman dikurangi menjadi 1 kali sehari pada pagi hari.</string>
-    <string name="healthy2">Pupuk baru diberikan setelah tanaman sudah berumur 3—5 bulan. Pupuk yang diberikan adalah NPK (15-15-15) yang bisa Anda dapati di toko pertanian. Pupuk diberikan sebanyak 50—300 gram/pohon. Pemupukan selanjutnya bisa dilakukan setelah tanaman berumur 4 bulan hingga tanaman berbunga. Setelah pohon berusia 1—2 tahun, berikan NPK setahun sekali setelah proses panen raya berakhir.</string>
+    <string name="healthy2">Pupuk baru diberikan setelah tanaman sudah berumur 3—5 bulan. Pupuk yang diberikan adalah NPK (15–15–15) yang bisa Anda dapati di toko pertanian. Pupuk diberikan sebanyak 50—300 gram/pohon. Pemupukan selanjutnya bisa dilakukan setelah tanaman berumur 4 bulan hingga tanaman berbunga. Setelah pohon berusia 1—2 tahun, berikan NPK setahun sekali setelah proses panen raya berakhir.</string>
     <string name="healthy3">Tunas liar atau tunas air pada pohon harus dipangkas karena bisa mengganggu pertumbuhan tanaman. Pemangkasan juga dilakukan ketika pohon sudah mencapai ketinggian 1,5—2 m dengan memilih tiga atau empat batang utama agar tajuk tanaman rimbun. Pemangkasan cabang yang lain dilakukan 1—2 cm dari batang utama sehingga luka pemangkasan tidak akan melukai batang utama. Pemangkasan juga dilakukan pada cabang yang tua, kering, dan tidak produktif.</string>
     <string name="healthy4">Memangkas daun dan buah yang tidak sehat</string>
-    <string name="healthy5">Memangkas daun dan buah yang tidak sehat</string>
 
 
     //LAYOUT
@@ -79,41 +77,43 @@
 
 
     //PENYAKIT
-    <string name="tes1_cause">Buah yang terinfeksi busuk phytophthora tampak berwarna coklat keabu-abuan dan basah kuyup dengan bagian tengah berwarna hitam keabu-abuan. Penyakit ini muncul dalam bentuk pertumbuhan miselium putih bertepung di atas buah.</string>
-    <string name="tes1_cause2">Jamur yang menginfeksi buah dapat bersumber dari tanah, batang yang sakit kanker batang, buah yang sakit, dan tumbuhan inang lain. Phytophthora palmivora akan bertahan dalam tanah, dari sini jamur dapat terbawa oleh percikan air hujan ke buah-buah yang dekat tanah. Setelah mengadakan infeksi, dalam waktu beberapa hari jamur pada buah sudah dapat menghasilkan banyak sporangium (bagian tubuh jamur yang berfungsi sebagai tempat pembentukan spora). Sporangium ini dapat terbawa oleh percikan air, atau oleh angin, dan mencapai buah yang lebih tinggi.</string>
-    <string name="tes1_treatment">Memetik semua buah busuk yang dilakukan bersamaan dengan pemangkasan ataupun saat panen, kemudian dibenamkan ke dalam tanah sedalam 30 cm.</string>
-    <string name="tes1_treatment2">Pengaturan kelembaban kebun bisa dilakukan dengan memperbaiki drainase, memangkas tanaman dan pohon pelindung dengan teratur, dan dengan mengendalikan gulma. </string>
-    <string name="tes1_treatment3">Pemberian Dithane efektif dalam mengendalikan penyakit</string>
+    <string name="tes1_cause">Infeksi Wilt and Leaf Blight pada tanaman disebabkan oleh berbagai patogen, seperti jamur Fusarium sp. dan jamur Cercospora sp.. Penyakit ini dapat menyebar melalui tanah, air, angin, serta melalui kontak dengan tanaman yang terinfeksi atau alat-alat pertanian yang tidak steril. Wilt atau layu adalah kondisi di mana tanaman kehilangan turgor atau kekakuan sel-sel, sehingga daun dan batang tampak layu dan mengendur. Penyebab utama layu adalah infeksi oleh patogen yang menyerang sistem vaskular tanaman, seperti jamur Verticillium atau Fusarium, yang menghalangi aliran air dan nutrisi di dalam tanaman. Gejala awal termasuk layu pada daun muda dan pucuk tanaman, yang kemudian menyebar ke seluruh tanaman, menyebabkan defoliasi dan kematian tanaman jika tidak segera ditangani.</string>
+    <string name="tes1_treatment"> Pangkas daun yang terinfeksi untuk membantu tanaman tumbuh lebih baik.</string>
+    <string name="tes1_treatment2"> Pengaturan kelembaban kebun bisa dilakukan dengan memperbaiki drainase, memangkas tanaman dan pohon pelindung dengan teratur, dan dengan mengendalikan gulma.</string>
+    <string name="tes1_treatment3">Pemberian Dithane efektif dalam mengendalikan penyakit.</string>
+    <string name="tes1_treatment4"> Bersihkan secara rutin area tanam hidroponik, seperti wadah dan pipa tempat pengairan.</string>
+    <string name="tes1_treatment5">Gunakan fungisida untuk mengendalikan infeksi jamur.</string>
 
-    <string name="tes2_cause">Scab disebabkan oleh jamur yang memiliki gejala bulat telur, gabus, dan kerusakan berbentuk bulat pada permukaan buah jambu biji. Kerusakan ini mempengaruhi daging di bawahnya, mengurangi kualitas buah dan nilai produksi Jamur terutama mempengaruhi buah–buahan mentah, yang menciptakan gelap dan kerusakan kudis coklat berdiameter 2–4mm. Kulit buah di bawah proses pematangan berubah menjadi lunak dan menghiasi coklat muda hingga coklat tua. Kelembaban relatif tinggi merusak buah-buahan di permukaan tanah yang ditutupi dengan dedaunan tebal. Buah-buahan yang jatuh telah sangat dirugikan.</string>
-    <string name="tes2_treatment">Pertahankan jarak tanam yang direkomendasikan (5–6m × 5–6m).</string>
-    <string name="tes2_treatment2">Buang cabang yang berlebih dan rusak setelah panen</string>
-    <string name="tes2_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
-    <string name="tes2_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
+    <string name="tes2_cause"> Viral infection pada tanaman disebabkan oleh berbagai jenis virus yang menyebar melalui serangga vektor, seperti kutu daun atau thrips, atau melalui kontak langsung antara tanaman yang terinfeksi dan yang sehat. Virus dapat menyebabkan berbagai gejala pada tanaman, tergantung pada jenis virus dan tanaman yang terinfeksi. Infeksi virus sering mengakibatkan daun tanaman memiliki bintik-bintik berwarna kuning atau belang-belang, yang dikenal sebagai mosaik. Selain itu, daun bisa menjadi keriting, mengerut, atau mengalami perubahan bentuk. Jika infeksi virus berkembang, virus dapat menyebar ke seluruh bagian tanaman, termasuk batang, yang dapat menyebabkan pertumbuhan terhambat dan daun yang cacat.</string>
+    <string name="tes2_treatment">Tidak ada pengobatan langsung untuk tanaman yang sudah terserang virus, tetapi penggunaan insektisida dapat membantu mengurangi penyebaran hama pembawa virus.</string>
+    <string name="tes2_treatment2">Pisahkan tanaman yang terinfeksi untuk mencegah penyebaran lebih lanjut.</string>
+    <string name="tes2_treatment3">Tidak ada pengobatan langsung untuk tanaman yang sudah terserang virus, tetapi penggunaan insektisida dapat membantu mengurangi penyebaran hama pembawa virus.</string>
+    <string name="tes2_treatment4">Pisahkan tanaman yang terinfeksi untuk mencegah penyebaran lebih lanjut.</string>
 
-    <string name="tes3_cause">Scab disebabkan oleh jamur yang memiliki gejala bulat telur, gabus, dan kerusakan berbentuk bulat pada permukaan buah jambu biji. Kerusakan ini mempengaruhi daging di bawahnya, mengurangi kualitas buah dan nilai produksi Jamur terutama mempengaruhi buah–buahan mentah, yang menciptakan gelap dan kerusakan kudis coklat berdiameter 2–4mm. Kulit buah di bawah proses pematangan berubah menjadi lunak dan menghiasi coklat muda hingga coklat tua. Kelembaban relatif tinggi merusak buah-buahan di permukaan tanah yang ditutupi dengan dedaunan tebal. Buah-buahan yang jatuh telah sangat dirugikan.</string>
-    <string name="tes3_treatment">Pertahankan jarak tanam yang direkomendasikan (5–6m × 5–6m).</string>
-    <string name="tes3_treatment2">Buang cabang yang berlebih dan rusak setelah panen</string>
-    <string name="tes3_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
-    <string name="tes3_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
+    <string name="tes3_cause">Disebabkan oleh berbagai jenis jamur dalam famili Erysiphaceae. Penyebaran jamur ini terutama melalui spora yang terbawa angin, bunga, dan buah. Gejala awal ditandai dengan bercak-bercak putih seperti bedak di permukaan bawah dan atas daun. Daun yang terinfeksi bisa menguning dan mati. Powdery mildew tumbuh subur pada iklim/cuaca hangat dan kering.</string>
+    <string name="tes3_treatment">Hindari penyiraman dari atas yang dapat menyebabkan permukaan daun menjadi basah.</string>
+    <string name="tes3_treatment2">Buang bagian daun yang terinfeksi untuk mengurangi penyebaran penyakit.</string>
+    <string name="tes3_treatment3">Berikan jarak minimal 30–45 cm antar tanaman untuk meningkatkan sirkulasi udara pada tanaman.</string>
+    <string name="tes3_treatment4">Semprotkan fungisida seperti sulfur dalam interval 7–14 hari untuk memberikan proteksi berkelanjutan pada tanaman.</string>
 
-    <string name="tes4_cause">Scab disebabkan oleh jamur yang memiliki gejala bulat telur, gabus, dan kerusakan berbentuk bulat pada permukaan buah jambu biji. Kerusakan ini mempengaruhi daging di bawahnya, mengurangi kualitas buah dan nilai produksi Jamur terutama mempengaruhi buah–buahan mentah, yang menciptakan gelap dan kerusakan kudis coklat berdiameter 2–4mm. Kulit buah di bawah proses pematangan berubah menjadi lunak dan menghiasi coklat muda hingga coklat tua. Kelembaban relatif tinggi merusak buah-buahan di permukaan tanah yang ditutupi dengan dedaunan tebal. Buah-buahan yang jatuh telah sangat dirugikan.</string>
-    <string name="tes4_treatment">Pertahankan jarak tanam yang direkomendasikan (5–6m × 5–6m).</string>
-    <string name="tes4_treatment2">Buang cabang yang berlebih dan rusak setelah panen</string>
-    <string name="tes4_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
-    <string name="tes4_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
+    <string name="tes4_cause">Disebabkan oleh infeksi jamur Bremia lactucae, spora jamur ini menyebar melalui hujan atau udara. Hal ini menyebabkan daun memiliki bintik hijau kekuning yang terang pada bagian atas daun, sementara pada bagian bawah tumbuh bulu-bulu halus seperti kapas berwarna putih kebiruan. Jika dibiarkan berkembang, jamur akan menembus ke batang yang dapat menyebabkan batang membusuk.</string>
+    <string name="tes4_treatment">Singkirkan tanaman yang terinfeksi dari lingkungan tanam.</string>
+    <string name="tes4_treatment2">Hindari penyiraman dari atas yang dapat menyebabkan permukaan daun menjadi basah.</string>
+    <string name="tes4_treatment3">Tingkatkan sirkulasi udara untuk mengurangi kelembaban tanaman serta berikan pencahayaan yang cukup.</string>
+    <string name="tes4_treatment4">Hindari penanaman yang padat dan kendalikan gulma, agar sirkulasi udara di sekitar tanaman tetap baik.</string>
 
-    <string name="tes5_cause">Scab disebabkan oleh jamur yang memiliki gejala bulat telur, gabus, dan kerusakan berbentuk bulat pada permukaan buah jambu biji. Kerusakan ini mempengaruhi daging di bawahnya, mengurangi kualitas buah dan nilai produksi Jamur terutama mempengaruhi buah–buahan mentah, yang menciptakan gelap dan kerusakan kudis coklat berdiameter 2–4mm. Kulit buah di bawah proses pematangan berubah menjadi lunak dan menghiasi coklat muda hingga coklat tua. Kelembaban relatif tinggi merusak buah-buahan di permukaan tanah yang ditutupi dengan dedaunan tebal. Buah-buahan yang jatuh telah sangat dirugikan.</string>
-    <string name="tes5_treatment">Pertahankan jarak tanam yang direkomendasikan (5–6m × 5–6m).</string>
-    <string name="tes5_treatment2">Buang cabang yang berlebih dan rusak setelah panen</string>
-    <string name="tes5_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
-    <string name="tes5_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
+    <string name="tes5_cause">Bacterial disebabkan oleh infeksi bakteri seperti bakteri Erwinia carotovora, Felicularia F, Rhizoctonia S, atau Xanthomonas spp. Bakteri ini dapat menyebar melalui hujan, percikan air, serangga, atau kontak langsung antara tanaman yang terinfeksi dan yang sehat. Suhu optimal untuk infeksi adalah 73°F (23°C). Namun, penyakit ini terjadi pada suhu yang lebih hangat pada selada yang ditanam di rumah kaca. Bacterial sering mempengaruhi daun tanaman dengan munculnya bintik-bintik coklat kecil yang dikelilingi oleh halo kuning, yang seiring waktu dapat berkembang menjadi bercak-bercak besar yang tidak teratur.</string>
+    <string name="tes5_treatment">Atur jarak tanam sehingga tidak bersentuhan antar daun luar.</string>
+    <string name="tes5_treatment2">Berikan pencahayaan yang cukup, dengan sinar matahari langsung setidaknya 4–6 jam per hari.</string>
+    <string name="tes5_treatment3">Buang bagian daun yang terinfeksi untuk mengurangi penyebaran penyakit.</string>
+    <string name="tes5_treatment4">Semprot dengan pestisida yang mengandung tembaga hidroksida atau campuran tembaga dan mankozeb dengan interval 3–5 hari.</string>
 
-    <string name="tes6_cause">Scab disebabkan oleh jamur yang memiliki gejala bulat telur, gabus, dan kerusakan berbentuk bulat pada permukaan buah jambu biji. Kerusakan ini mempengaruhi daging di bawahnya, mengurangi kualitas buah dan nilai produksi Jamur terutama mempengaruhi buah–buahan mentah, yang menciptakan gelap dan kerusakan kudis coklat berdiameter 2–4mm. Kulit buah di bawah proses pematangan berubah menjadi lunak dan menghiasi coklat muda hingga coklat tua. Kelembaban relatif tinggi merusak buah-buahan di permukaan tanah yang ditutupi dengan dedaunan tebal. Buah-buahan yang jatuh telah sangat dirugikan.</string>
-    <string name="tes6_treatment">Pertahankan jarak tanam yang direkomendasikan (5–6m × 5–6m).</string>
-    <string name="tes6_treatment2">Buang cabang yang berlebih dan rusak setelah panen</string>
-    <string name="tes6_treatment3">Tutupi buah-buahan dengan kertas atau kantong plastik dengan satu sisi terbuka di panggung kecil</string>
-    <string name="tes6_treatment4">Kendalikan serangga kepik Helopeltis Spp untuk mengurangi inisiasi penyakit</string>
+    <string name="tes6_cause">Disebabkan oleh patogen Septoria lactucae, penyakit ini menyebar melalui air, angin, penularan serangga, gulma di sekitar tanaman, atau bahkan melalui tangan atau peralatan manusia. Daun yang terinfeksi memiliki bintik-bintik berwarna coklat muda yang muncul di antara urat daun. Daun yang terserang dapat mengering dan menjadi tipis.</string>
+    <string name="tes6_treatment">Buang bibit yang menunjukkan bercak daun sebelum dipindahkan ke media hidroponik.</string>
+    <string name="tes6_treatment2">Hindari membasahi daun dengan melakukan penyiraman dari atas.</string>
+    <string name="tes6_treatment3">Bersihkan gulma yang berada di sekitar tanaman.</string>
+    <string name="tes6_treatment4">Tingkatkan sirkulasi udara yang memadai.</string>
+    <string name="tes6_treatment5">Semprot tanaman dengan fungisida yang mengandung bahan dasar tembaga seperti tembaga diammonia diasetat.</string>
 
     <string name="tab_text_1">Home</string>
     <string name="tab_text_2">Profile</string>
@@ -144,4 +144,8 @@
     <string name="deskripsi">Deskripsi</string>
     <string name="ask_ai">Ask AI</string>
     <string name="chat_with_ai">Chat with AI</string>
+    <string name="try_again">Try Again</string>
+    <string name="undefine">Sayangnya, aplikasi kami tidak bisa mendeteksi gambar yang Anda miliki, mohon ulangi lagi jika gambar tidak sesuai dengan gejala yang ada.</string>
+
+
 </resources>

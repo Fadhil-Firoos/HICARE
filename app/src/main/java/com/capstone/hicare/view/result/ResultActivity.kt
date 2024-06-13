@@ -51,21 +51,24 @@ class ResultActivity : AppCompatActivity() {
                 onBackPressed()
             }
 
-            if (nama == "Lettuce Healthy") {
+            if (nama == "Healthy") {
                 txtpenyebab.text =
-                    "1. Perubahan pada kulit: Infeksi jamur pada kucing umumnya mempengaruhi kulit, dan gejalanya dapat berupa daerah kulit yang mengalami kebotakan, kering, bersisik, atau mengelupas. Anda mungkin melihat adanya perubahan warna pada kulit, seperti bercak merah atau kecoklatan.\n" +
-                            "\n" +
-                            "2. Jamur yang menginfeksi buah dapat bersumber dari tanah, batang yang sakit kanker batang, buah yang sakit, dan tumbuhan inang lain. Phytophthora palmivora akan bertahan dalam tanah, dari sini jamur dapat terbawa oleh percikan air hujan ke buah-buah yang dekat tanah. Setelah mengadakan infeksi, dalam waktu beberapa hari jamur pada buah sudah dapat menghasilkan banyak sporangium (bagian tubuh jamur yang berfungsi sebagai tempat pembentukan spora). Sporangium ini dapat terbawa oleh percikan air, atau oleh angin, dan mencapai buah yang lebih tinggi."
+                    "1. Menurunkan tekanan darah\n" +
+                            "2. Menurunkan resiko kanker\n" +
+                            "3. Meredakan flu dan batuk\n" +
+                            "4. Melancarkan saluran pencernaan\n"
 
                 txtObat.text =
-                    "Ada beberpa produk yang dapat digunakan untuk menghilangkan jamur pada kucing, antara lain: " +"\n" +
-                            "1. Memetik semua buah busuk yang dilakukan bersamaan dengan pemangkasan ataupun saat panen, kemudian dibenamkan ke dalam tanah sedalam 30 cm." + "\n" +
+                            "1. Penyiraman bisa dilakukan sebanyak 2 kali untuk tanaman yang baru ditanam. Penyiraman dilakukan pada pagi dan sore hari. Setelah tanaman sudah cukup dewasa, frekuensi penyiraman dikurangi menjadi 1 kali sehari pada pagi hari." + "\n" +
                             "2. Pengaturan kelembaban kebun bisa dilakukan dengan memperbaiki drainase, memangkas tanaman dan pohon pelindung dengan teratur, dan dengan mengendalikan gulma." +"\n" +
-                            "3. Pemberian Dithane efektif dalam mengendalikan penyakit"
-
+                            "3. Pupuk baru diberikan setelah tanaman sudah berumur 3—5 bulan. Pupuk yang diberikan adalah NPK (15–15-15) yang bisa Anda dapati di toko pertanian. Pupuk diberikan sebanyak 50—300 gram/pohon. Pemupukan selanjutnya bisa dilakukan setelah tanaman berumur 4 bulan hingga tanaman berbunga. Setelah pohon berusia 1—2 tahun, berikan NPK setahun sekali setelah proses panen raya berakhir.\n" +
+                                    "4. Tunas liar atau tunas air pada pohon harus dipangkas karena bisa mengganggu pertumbuhan tanaman. Pemangkasan juga dilakukan ketika pohon sudah mencapai ketinggian 1,5—2 m dengan memilih tiga atau empat batang utama agar tajuk tanaman rimbun. Pemangkasan cabang yang lain dilakukan 1—2 cm dari batang utama sehingga luka pemangkasan tidak akan melukai batang utama. Pemangkasan juga dilakukan pada cabang yang tua, kering, dan tidak produktif.\n" +
+                                    "Memangkas daun dan buah yang tidak sehat"
+                textView.text = "Manfaat Selada"
+                textView2.text = "Tips Perawatan"
             }
             else if (nama == "Wilt and leaf blight"){
-                txtpenyebab.text = "Infeksi Wilt and Leaf Blight pada tanaman disebabkan oleh berbagai patogen, seperti jamur Fusarium sp. Dan jamur Cercospora sp.. "
+                txtpenyebab.text = "Infeksi Wilt and Leaf Blight pada tanaman disebabkan oleh berbagai patogen, seperti jamur Fusarium sp. dan jamur Cercospora sp.. Penyakit ini dapat menyebar melalui tanah, air, angin, serta melalui kontak dengan tanaman yang terinfeksi atau alat-alat pertanian yang tidak steril. Wilt atau layu adalah kondisi di mana tanaman kehilangan turgor atau kekakuan sel-sel, sehingga daun dan batang tampak layu dan mengendur. Penyebab utama layu adalah infeksi oleh patogen yang menyerang sistem vaskular tanaman, seperti jamur Verticillium atau Fusarium, yang menghalangi aliran air dan nutrisi di dalam tanaman. Gejala awal termasuk layu pada daun muda dan pucuk tanaman, yang kemudian menyebar ke seluruh tanaman, menyebabkan defoliasi dan kematian tanaman jika tidak segera ditangani."
 
                 txtObat.text =
                     "1. Pangkas daun yang terinfeksi untuk membantu tanaman tumbuh lebih baik.\n" +
@@ -77,7 +80,7 @@ class ResultActivity : AppCompatActivity() {
                 txtpenyebab.text = "Viral infection pada tanaman disebabkan oleh berbagai jenis virus yang menyebar melalui serangga vektor, seperti kutu daun atau thrips, atau melalui kontak langsung antara tanaman yang terinfeksi dan yang sehat. Virus dapat menyebabkan berbagai gejala pada tanaman, tergantung pada jenis virus dan tanaman yang terinfeksi. Infeksi virus sering mengakibatkan daun tanaman memiliki bintik-bintik berwarna kuning atau belang-belang, yang dikenal sebagai mosaik. Selain itu, daun bisa menjadi keriting, mengerut, atau mengalami perubahan bentuk. Jika infeksi virus berkembang, virus dapat menyebar ke seluruh bagian tanaman, termasuk batang, yang dapat menyebabkan pertumbuhan terhambat dan daun yang cacat."
 
                 txtObat.text =
-                    "1. Tidak ada pengtxtObatan langsung untuk tanaman yang sudah terserang virus, tetapi penggunaan insektisida dapat membantu mengurangi penyebaran hama pembawa virus.\n"+
+                    "1. Tidak ada pengobatan langsung untuk tanaman yang sudah terserang virus, tetapi penggunaan insektisida dapat membantu mengurangi penyebaran hama pembawa virus.\n"+
                             "2. Pisahkan tanaman yang terinfeksi untuk mencegah penyebaran lebih lanjut."
             }
             else if (nama == "Powdery Mildew"){
@@ -124,10 +127,10 @@ class ResultActivity : AppCompatActivity() {
                             "3. Semprot tanaman dengan fungisida yang mengandung bahan dasar tembaga seperti tembaga diammonia diasetat."
 
             }
-            else if (nama == "tidak terdefinisi"){
+            else if (nama == "Undefine"){
                 txtpenyebab.visibility = TextView.INVISIBLE
                 txtObat.visibility = TextView.INVISIBLE
-                foto.visibility = ImageView.INVISIBLE
+                foto.setImageResource(R.drawable.nahida)
                 penyakit.visibility = TextView.INVISIBLE
                 myRectangleView5.visibility = Button.INVISIBLE
                 scrollView2.visibility = ScrollView.INVISIBLE
