@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         enableEdgeToEdge()
         window.statusBarColor = getColor(R.color.white)
+        hideNavigationBar()
 
         val bottomNavigation = findViewById<CurvedBottomNavigation>(R.id.bottomNavigation)
         bottomNavigation.add(
@@ -98,13 +99,12 @@ class MainActivity : AppCompatActivity() {
 
             binding.apply {
                 btnHomeCamera.visibility = View.VISIBLE
-                bottomNavigation.visibility = View.GONE
+                bottomNavigation.visibility = View.INVISIBLE
 
             }
             supportActionBar?.hide()
 
         } else {
-
             layoutParams.bottomMargin = resources.getDimensionPixelSize(R.dimen.margin_61dp)
             myTextView.layoutParams = layoutParams
 
@@ -114,13 +114,6 @@ class MainActivity : AppCompatActivity() {
                 title = ""
                 setBackgroundDrawable(ColorDrawable(Color.WHITE))
                 elevation = 0f
-            }
-            if (fragment is HistoryFragment) {
-
-                layoutParams.bottomMargin = resources.getDimensionPixelSize(R.dimen.margin_zero)
-                myTextView.layoutParams = layoutParams
-                supportActionBar?.hide()
-
             }
         }
 
@@ -136,13 +129,10 @@ class MainActivity : AppCompatActivity() {
         updateBottomNavigation(2)
     }
 
-
-
     fun navigateToAnalyzeActivity() {
         val intent = Intent(this, AnalyzeActivity::class.java)
         startActivity(intent)
     }
-
 
     fun navigateToArticleActivity() {
         val intent = Intent(this, ArticleActivity::class.java)
@@ -160,8 +150,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.option_menu, menu)
-        return true
+            menuInflater.inflate(R.menu.option_menu, menu)
+            return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -175,5 +165,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun hideNavigationBar() {
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                )
+    }
 
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            hideNavigationBar()
+        }
+    }
 }

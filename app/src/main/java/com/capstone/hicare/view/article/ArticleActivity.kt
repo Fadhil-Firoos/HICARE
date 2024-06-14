@@ -6,6 +6,8 @@ import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -15,7 +17,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.capstone.hicare.R
 import com.capstone.hicare.adapter.ArticleAdapter
-import com.capstone.hicare.databinding.ActivityMainBinding
 import com.capstone.hicare.model.ArticleModel
 import com.capstone.hicare.retrofit.ApiService
 import retrofit2.Call
@@ -24,7 +25,6 @@ import retrofit2.Response
 
 class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
     private val TAG: String = "ArticleActivity"
-
     private lateinit var articleAdapter: ArticleAdapter
     private lateinit var progressBar: ProgressBar
 
@@ -33,13 +33,15 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
         setContentView(R.layout.activity_article)
         enableEdgeToEdge()
         window.statusBarColor = getColor(R.color.white)
+        hideNavigationBar()
 
+        supportActionBar?.show()
         supportActionBar?.apply {
             title = ""
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.arrow_back_left)
-            setBackgroundDrawable(ColorDrawable(Color.parseColor("#00000000")))
+            setBackgroundDrawable(ColorDrawable(Color.WHITE))
             elevation = 0f
         }
         progressBar = findViewById(R.id.progressBar)
@@ -55,6 +57,24 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = articleAdapter
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.option_menu, menu)
+        val settingItem = menu?.findItem(R.id.btn_setting)
+        settingItem?.isVisible = false
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
@@ -104,5 +124,19 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
         val intent = Intent(Intent.ACTION_VIEW)
         intent.data = Uri.parse(result.url_artikel)
         startActivity(intent)
+    }
+
+    private fun hideNavigationBar() {
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                )
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            hideNavigationBar()
+        }
     }
 }

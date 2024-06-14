@@ -2,7 +2,6 @@ package com.capstone.hicare.model.factory
 
 import android.content.res.Resources
 import android.content.res.TypedArray
-import android.util.Log
 import com.capstone.hicare.R
 import com.capstone.hicare.model.Disease
 
@@ -25,7 +24,6 @@ object DiseaseList {
             )
             Diseases.add(disease)
         }
-
         return Diseases
     }
 

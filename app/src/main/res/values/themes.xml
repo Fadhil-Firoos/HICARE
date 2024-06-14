@@ -1,25 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.HICARE" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
     <style name="Theme.HICARE" parent="Base.Theme.HICARE">
-        <item name="android:statusBarColor">@color/white</item>
     </style>
 
     <style name="Theme.HICARE.ActionBar" parent="Theme.Material3.DayNight">
 
-    </style>
-
-    <style name="Widget.Theme.StoryApp.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/black_overlay</item>
-    </style>
-
-    <style name="Widget.Theme.StoryApp.ButtonBar.Fullscreen" parent="">
-        <item name="android:background">@color/black_overlay</item>
-        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 
     <style name="Theme.ChatView" parent="android:Theme.Material.Light.NoActionBar" />

@@ -20,7 +20,6 @@ import com.capstone.hicare.view.detail.DetailActivity.Companion.EXTRA_DISEASE_IM
 import com.capstone.hicare.view.detail.DetailActivity.Companion.EXTRA_DISEASE_NAME
 import com.capstone.hicare.view.main.MainActivity
 
-
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -66,7 +65,6 @@ class HomeFragment : Fragment() {
         recyclerView()
     }
 
-
     fun recyclerView() {
         binding.apply {
             rvListDiseases.layoutManager = GridLayoutManager(activity, 1)
@@ -93,7 +91,6 @@ class HomeFragment : Fragment() {
             data.diseaseDetail?.let { putInt(EXTRA_DISEASE_DETAIL, it) }
         }
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

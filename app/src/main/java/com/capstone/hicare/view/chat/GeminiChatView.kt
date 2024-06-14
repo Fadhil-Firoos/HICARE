@@ -19,12 +19,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.rounded.AccountCircle
-import androidx.compose.material.icons.rounded.Face
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
@@ -39,7 +37,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.ai.client.generativeai.GenerativeModel
@@ -60,13 +57,18 @@ fun GeminiChatView(
     val isLoading = remember { mutableStateOf(false) }
     val chatDataList = remember { mutableStateOf(listOf<ChatMember>()) }
 
-    val generativeModel = GenerativeModel(
-        modelName = "gemini-pro",
-        apiKey = apiKey
-    )
-    val chat = generativeModel.startChat(history = chatContext.map {
-        Content(role = it.role, parts = listOf(TextPart(text = it.text)))
-    })
+    val generativeModel = remember {
+        GenerativeModel(
+            modelName = "gemini-pro",
+            apiKey = apiKey
+        )
+    }
+
+    val chat = remember {
+        generativeModel.startChat(history = chatContext.map {
+            Content(role = it.role, parts = listOf(TextPart(text = it.text)))
+        })
+    }
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -92,6 +94,7 @@ fun GeminiChatView(
                 modifier = Modifier.padding(16.dp, top = 50.dp)
             )
         }
+
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -203,11 +206,10 @@ fun ChatBubble(
     }
 }
 
-
 @Composable
 fun RoundedCornerTextFieldWithSend(
     modifier: Modifier = Modifier,
-    onSendClick: (String) -> Unit, // Callback for send button click
+    onSendClick: (String) -> Unit,
     isLoading: Boolean,
     appThemColor: Color
 ) {
@@ -267,4 +269,4 @@ fun RoundedCornerTextFieldWithSend(
 
 data class GeminiContent(var role: String, var text: String)
 data class ChatMember(var memberType: MemberType, var text: String)
-enum class MemberType {BOT, USER}
+enum class MemberType { BOT, USER }

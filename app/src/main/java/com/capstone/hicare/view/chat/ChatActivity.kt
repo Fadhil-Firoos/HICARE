@@ -1,11 +1,14 @@
 package com.capstone.hicare.view.chat
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.res.colorResource
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityChatBinding
 
@@ -17,6 +20,9 @@ class ChatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
+        window.statusBarColor = getColor(R.color.white)
+        hideNavigationBar()
 
         binding.composeView.setContent {
             GeminiChatView(
@@ -58,6 +64,20 @@ class ChatActivity : AppCompatActivity() {
                     )
                 )
             )
+        }
+    }
+
+    private fun hideNavigationBar() {
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                )
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            hideNavigationBar()
         }
     }
 }

@@ -18,7 +18,6 @@ object ApiService {
                 .build()
 
             return retrofit.create(ApiEndpoint::class.java)
-
         }
 
     private val client: OkHttpClient by lazy {
@@ -30,5 +29,4 @@ object ApiService {
             .addInterceptor(interceptor)
             .build()
     }
-
 }

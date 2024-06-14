@@ -4,10 +4,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Canvas
 import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Rect
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
@@ -16,16 +13,14 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityAnalyzeBinding
 import com.capstone.hicare.model.factory.Classifier
 import com.capstone.hicare.utils.uriToFile
-import com.capstone.hicare.view.chat.ChatActivity
 import com.capstone.hicare.view.result.ResultActivity
-import com.capstone.hicare.view.setting.SettingActivity
 import com.yalantis.ucrop.UCrop
 import java.io.ByteArrayOutputStream
 import java.io.IOException
@@ -35,7 +30,6 @@ class AnalyzeActivity : AppCompatActivity() {
     private lateinit var mBitmap: Bitmap
     private lateinit var binding: ActivityAnalyzeBinding
     private var currentImageUri: Uri? = null
-
     private val mInputSize = 256
     private val mModelPath = "lettuce.tflite"
     private val mLabelPath = "label.txt"
@@ -45,8 +39,10 @@ class AnalyzeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAnalyzeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
         window.statusBarColor = getColor(R.color.white)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        hideNavigationBar()
 
         supportActionBar?.apply {
             title = ""
@@ -63,6 +59,7 @@ class AnalyzeActivity : AppCompatActivity() {
         }
         var imageUri: Uri?
         val imageUriString = intent.getStringExtra("image_uri")
+
         if (imageUriString != null) {
             imageUri = Uri.parse(imageUriString)
             currentImageUri = imageUri // Assigning currentImageUri
@@ -73,17 +70,15 @@ class AnalyzeActivity : AppCompatActivity() {
             } catch (e: IOException) {
                 e.printStackTrace()
             }
-        }
-        else {
+        } else {
             mBitmap = BitmapFactory.decodeResource(resources, mSamplePath)
             mBitmap = Bitmap.createScaledBitmap(mBitmap, mInputSize, mInputSize, true)
             binding.imageView.setImageBitmap(mBitmap)
         }
+
         binding.buttonAnalyze.setOnClickListener {
             val results = mClassifier.recognizeImage(mBitmap).firstOrNull()
             val intent = Intent(this, ResultActivity::class.java)
-
-            Toast.makeText(this, results?.title, Toast.LENGTH_LONG).show()
 
             intent.putExtra("penyakit", results?.title + "\n" + "\nAkurasi: " + results?.confidence + "%")
             intent.putExtra("nama", results?.title)
@@ -97,6 +92,7 @@ class AnalyzeActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
     private val galleryLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri ->
@@ -144,6 +140,9 @@ class AnalyzeActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
+        val settingItem = menu?.findItem(R.id.btn_setting)
+        settingItem?.isVisible = false
+
         return true
     }
 
@@ -151,10 +150,6 @@ class AnalyzeActivity : AppCompatActivity() {
         return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
-                true
-            }
-            R.id.btn_setting -> {
-                startActivity(Intent(this, SettingActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -177,5 +172,19 @@ class AnalyzeActivity : AppCompatActivity() {
         }
 
         return Bitmap.createScaledBitmap(bitmap, targetWidth, targetHeight, true)
+    }
+
+    private fun hideNavigationBar() {
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                )
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            hideNavigationBar()
+        }
     }
 }

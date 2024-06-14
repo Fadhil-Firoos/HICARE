@@ -20,8 +20,6 @@ import com.capstone.hicare.view.detail.DetailActivity.Companion.EXTRA_DISEASE_NA
 
 
 class DiseaseAdapter (private val diseaseList: ArrayList<Disease>): RecyclerView.Adapter<DiseaseAdapter.RecyclerViewHolder>(),Filterable {
-
-
     private lateinit var onItemClickCallBack: OnItemClickCallBack
     private var filterDiseaseList: ArrayList<Disease> = diseaseList
 
@@ -43,7 +41,6 @@ class DiseaseAdapter (private val diseaseList: ArrayList<Disease>): RecyclerView
         }
     }
 
-
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
         holder.bind(filterDiseaseList[position])
         holder.itemView.setOnClickListener {
@@ -57,7 +54,6 @@ class DiseaseAdapter (private val diseaseList: ArrayList<Disease>): RecyclerView
             context.startActivity(intent)
         }
     }
-
 
     override fun getItemCount(): Int {
         Log.d("DiseaseAdapter", "Number of items in adapter: ${filterDiseaseList.size}")
@@ -104,5 +100,4 @@ class DiseaseAdapter (private val diseaseList: ArrayList<Disease>): RecyclerView
     interface OnItemClickCallBack {
         fun onItemClicked(data: Disease)
     }
-
 }
