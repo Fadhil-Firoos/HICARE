@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivityMainBinding
@@ -32,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
-        window.statusBarColor = getColor(R.color.white)
         hideNavigationBar()
 
         val bottomNavigation = findViewById<CurvedBottomNavigation>(R.id.bottomNavigation)
@@ -68,22 +68,10 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-
-
         }
         fragment = HomeFragment()
         replaceFragment(fragment)
         bottomNavigation.show(1)
-
-        binding.apply {
-            btnHomeCamera.setOnClickListener{
-                updateBottomNavigation(1)
-                fragment = HomeFragment()
-                replaceFragment(fragment)
-                btnHomeCamera.visibility = View.GONE
-            }
-
-        }
     }
 
     private fun replaceFragment(fragment: Fragment) {
@@ -93,18 +81,19 @@ class MainActivity : AppCompatActivity() {
         val layoutParams = myTextView.layoutParams as ViewGroup.MarginLayoutParams
 
         if (fragment is CameraFragment) {
+            window.statusBarColor = getColor(R.color.smoooth_black)
 
             layoutParams.bottomMargin = resources.getDimensionPixelSize(R.dimen.margin_zero)
             myTextView.layoutParams = layoutParams
-
-            binding.apply {
-                btnHomeCamera.visibility = View.VISIBLE
-                bottomNavigation.visibility = View.INVISIBLE
-
+            supportActionBar?.show()
+            supportActionBar?.apply {
+                title = ""
+                setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this@MainActivity, R.color.smoooth_black)))
+                elevation = 0f
             }
-            supportActionBar?.hide()
 
         } else {
+            window.statusBarColor = getColor(R.color.white)
             layoutParams.bottomMargin = resources.getDimensionPixelSize(R.dimen.margin_61dp)
             myTextView.layoutParams = layoutParams
 
@@ -150,8 +139,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        if(fragment is CameraFragment){
             menuInflater.inflate(R.menu.option_menu, menu)
-            return true
+            val settingItem = menu?.findItem(R.id.btn_setting)
+            settingItem?.isVisible = false
+        }else {
+            menuInflater.inflate(R.menu.option_menu, menu)
+        }
+        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

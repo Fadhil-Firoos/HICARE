@@ -1,8 +1,10 @@
 package com.capstone.hicare.view.setting
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -28,6 +30,12 @@ class SettingActivity : AppCompatActivity() {
             setBackgroundDrawable(ColorDrawable(Color.WHITE))
             elevation = 0f
         }
+
+//        binding.btnLanguage.setOnClickListener {
+//            val intent = Intent(Intent(Settings.ACTION_LOCALE_SETTINGS))
+//            startActivity(intent)
+//        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

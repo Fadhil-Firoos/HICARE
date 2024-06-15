@@ -13,6 +13,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -77,19 +78,33 @@ class AnalyzeActivity : AppCompatActivity() {
         }
 
         binding.buttonAnalyze.setOnClickListener {
-            val results = mClassifier.recognizeImage(mBitmap).firstOrNull()
-            val intent = Intent(this, ResultActivity::class.java)
+            val sampleBitmap = BitmapFactory.decodeResource(resources, mSamplePath)
+            val scaledSampleBitmap = Bitmap.createScaledBitmap(sampleBitmap, mInputSize, mInputSize, true)
 
-            intent.putExtra("penyakit", results?.title + "\n" + "\nAkurasi: " + results?.confidence + "%")
-            intent.putExtra("nama", results?.title)
+            if (mBitmap.sameAs(scaledSampleBitmap)) {
+                Toast.makeText(this, "Tolong Masukan Foto Terlebih Dahulu", Toast.LENGTH_SHORT).show()
+            } else {
+                val results = mClassifier.recognizeImage(mBitmap).firstOrNull()
+                val intent = Intent(this, ResultActivity::class.java)
 
-            val stream = ByteArrayOutputStream()
-            mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream) // Set compression to 100 to avoid loss in quality
-            val byteArray = stream.toByteArray()
+                intent.putExtra(
+                    "penyakit",
+                    results?.title + "\n" + "\nAkurasi: " + results?.confidence + "%"
+                )
+                intent.putExtra("nama", results?.title)
 
-            intent.putExtra("image", byteArray)
+                val stream = ByteArrayOutputStream()
+                mBitmap.compress(
+                    Bitmap.CompressFormat.PNG,
+                    100,
+                    stream
+                ) // Set compression to 100 to avoid loss in quality
+                val byteArray = stream.toByteArray()
 
-            startActivity(intent)
+                intent.putExtra("image", byteArray)
+
+                startActivity(intent)
+            }
         }
     }
 
