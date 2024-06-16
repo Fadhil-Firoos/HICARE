@@ -158,31 +158,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_num3" />
 
-    <TextView
-        android:id="@+id/tv_num4"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="12dp"
-        android:background="@color/green_light2"
-        android:gravity="center"
-        android:text="4"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/tv_num3"
-        app:layout_constraintTop_toBottomOf="@+id/pengendalian3" />
-
-    <TextView
-        android:id="@+id/pengendalian4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="16dp"
-        android:layout_weight="1"
-        android:textColor="@color/black"
-        android:text="@string/tes1_treatment3"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_num4" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

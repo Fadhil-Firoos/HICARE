@@ -1,12 +1,17 @@
 package com.capstone.hicare.view.fragment
 
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.capstone.hicare.R
 import com.capstone.hicare.adapter.DiseaseAdapter

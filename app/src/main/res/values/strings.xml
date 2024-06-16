@@ -3,7 +3,7 @@
     <string name="splash" translatable="false">splash</string>
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="setting">setting</string>
-    <string name="identify_disease">Identify Disease</string>
+    <string name="identify_disease">Identifikasi Penyakit</string>
     <string name="diagnose_from_gallery">Diagnosis Dari Galeri</string>
     <string name="macam_penyakit">Ragam Penyakit Selada </string>
     <string name="see_all">Lihat Semua</string>
@@ -141,7 +141,7 @@
     <string name="simpan">Simpan</string>
     <string name="deskripsi">Deskripsi</string>
     <string name="ask_ai" translatable="false">Ask AI</string>
-    <string name="chat_with_ai" translatable="false">Chat with AI</string>
+    <string name="chat_with_ai" translatable="false">Chat AI</string>
     <string name="try_again">Try Again</string>
     <string name="undefine">Sayangnya, aplikasi kami tidak bisa mendeteksi gambar yang Anda miliki, mohon ulangi lagi jika gambar tidak sesuai dengan gejala yang ada.</string>
     <string name="manfaat_selada">Manfaat Selada</string>
@@ -164,7 +164,7 @@
     <string name="penyebab">Penyebab</string>
     <string name="pengendalian">Pengendalian</string>
     <string name="bahasa">Bahasa</string>
-    <string name="ubah_bahasa">Ubah Bahasa hanya mendukung bahasa Indonesia dan Inggris</string>
+    <string name="ubah_bahasa">Bahasa yang tersedia hanya indonesia dan bahasa inggris</string>
     <string name="tentang">Tentang</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="article_icon" translatable="false">Article Icon</string>
@@ -176,4 +176,13 @@
     <string name="tolong_masukan_foto_terlebih_dahulu">Tolong Masukan Foto Terlebih Dahulu</string>
     <string name="akurasi">"\nAkurasi: "</string>
     <string name="nama">"Nama : "</string>
+    <string name="see_more">Baca Selengkapnya</string>
+    <string name="our_teams">Tim Kami</string>
+    <string name="data_tersimpan_message">Data Tersimpan</string>
+    <string name="team">Tim</string>
+    <string name="member_of_team">Anggota Tim</string>
+    <string name="about_us">Tentang Kami</string>
+    <string name="about">Terinspirasi dari lanskap pertanian Indonesia dan meningkatnya popularitas berkebun hidroponik, HICARE menjawab kebutuhan penting akan manajemen kesehatan tanaman yang efisien dengan mengembangkan aplikasi seluler yang menggunakan teknologi klasifikasi gambar yang canggih. Berfokus pada pendeteksian penyakit pada selada hidroponik, aplikasi ini memberikan identifikasi perubahan warna dan bentuk pada daun tanaman secara real-time kepada pengguna, disertai dengan panduan perawatan dan strategi perawatan yang komprehensif. Solusi inovatif ini bertujuan untuk memberdayakan para penggemar hidroponik dan pemangku kepentingan pertanian, memastikan kualitas hasil panen yang lebih baik melalui manajemen perawatan tanaman yang mudah diakses dan akurat</string>
+    <string name="about_app">Tentang Aplikasi</string>
+    <string name="specialist_text">Tanyakan kepada Kiana, spesialis selada kami</string>
 </resources>

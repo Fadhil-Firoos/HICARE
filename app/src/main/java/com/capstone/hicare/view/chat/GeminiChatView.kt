@@ -109,7 +109,7 @@ fun GeminiChatView(
                     )
 
                     Text(
-                        text = "Ask to Kiana, our specialist Lettuce",
+                        text = stringResource(id = R.string.specialist_text),
                         color = Color.Black,
                         fontSize = 12.sp,
                         modifier = Modifier.padding(top = 4.dp)

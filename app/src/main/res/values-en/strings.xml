@@ -16,8 +16,8 @@
     <string name="benefits3">Relieves cold and cough</string>
     <string name="benefits4">Streamline the digestive tract</string>
     <string name="healthy1">Watering can be done twice for newly planted plants. Watering is done in the morning and evening. Once the plants are mature enough, the frequency of watering is reduced to once a day in the morning.</string>
-    <string name="healthy2">Fertiliser is only applied after the plants are 3-5 months old. The fertiliser is NPK (15-15-15), which you can find at farm shops. The fertiliser is given as much as 50-300 grams/tree. Further fertilisation can be done after the plant is 4 months old until the plant flowers. After the tree is 1-2 years old, apply NPK once a year after the harvest process ends.</string>
-    <string name="healthy3">Wild shoots or water shoots on the tree should be pruned because they can interfere with plant growth. Pruning is also done when the tree has reached a height of 1.5-2 m by selecting three or four main trunks so that the crown of the plant is lush. Pruning of other branches is done 1-2 cm from the main trunk so that the pruning wound will not hurt the main trunk. Pruning is also done on old, dry, and unproductive branches.</string>
+    <string name="healthy2">Fertiliser is only applied after the plants are 3–5 months old. The fertiliser is NPK (15–15–15), which you can find at farm shops. The fertiliser is given as much as 50-300 grams/tree. Further fertilisation can be done after the plant is 4 months old until the plant flowers. After the tree is 1-2 years old, apply NPK once a year after the harvest process ends.</string>
+    <string name="healthy3">Wild shoots or water shoots on the tree should be pruned because they can interfere with plant growth. Pruning is also done when the tree has reached a height of 1.5–2 m by selecting three or four main trunks so that the crown of the plant is lush. Pruning of other branches is done 1-2 cm from the main trunk so that the pruning wound will not hurt the main trunk. Pruning is also done on old, dry, and unproductive branches.</string>
     <string name="healthy4">Prune unhealthy leaves and fruits</string>
     <string name="tes1_cause">Wilt and leaf blight infections in plants are caused by various pathogens, such as Fusarium sp. and Cercospora sp. fungi. The disease can be spread through soil, water, wind, as well as through contact with infected plants or unsterilised farm tools. Wilt is a condition in which the plant loses turgour or stiffness of the cells, so that the leaves and stems appear wilted and sagging. The main cause of wilt is infection by pathogens that attack the plant\'s vascular system, such as Verticillium or Fusarium fungi, which block the flow of water and nutrients within the plant. Early symptoms include wilting of the young leaves and shoots of the plant, which then spreads to the rest of the plant, causing defoliation and plant death if not treated promptly.</string>
     <string name="tes1_treatment">Prune the infected leaves to help the plant grow better.</string>
@@ -33,8 +33,8 @@
     <string name="tes3_cause">Caused by various types of fungi in the Erysiphaceae family. The spread of these fungi is mainly through wind-borne spores, flowers and fruits. Early symptoms are characterised by powdery white patches on the lower and upper surfaces of leaves. Infected leaves may turn yellow and die. Powdery mildew thrives in warm and dry climates/weather.</string>
     <string name="tes3_treatment">Avoid watering from above which may cause the leaf surface to become wet.</string>
     <string name="tes3_treatment2">Remove infected leaves to reduce the spread of the disease.</string>
-    <string name="tes3_treatment3">Provide a minimum distance of 30-45 cm between plants to increase air circulation in plants.</string>
-    <string name="tes3_treatment4">Spray fungicides such as sulphur at 7-14 day intervals to provide continuous protection to the crop.</string>
+    <string name="tes3_treatment3">Provide a minimum distance of 30–45 cm between plants to increase air circulation in plants.</string>
+    <string name="tes3_treatment4">Spray fungicides such as sulphur at 7–14 day intervals to provide continuous protection to the crop.</string>
     <string name="tes4_cause">Caused by infection with the fungus Bremia lactucae, the spores of this fungus are spread by rain or air. This causes the leaves to have bright yellowish-green spots on the upper part of the leaf, while on the underside fine cotton-like hairs of a bluish-white colour grow. If allowed to develop, the fungus will penetrate into the stem which can cause the stem to rot.</string>
     <string name="tes4_treatment">Remove infected plants from the growing environment.</string>
     <string name="tes4_treatment2">Avoid watering from above which may cause the leaf surface to become wet.</string>
@@ -42,9 +42,9 @@
     <string name="tes4_treatment4">Avoid dense planting and control weeds, so that the air circulation around the plants remains good.</string>
     <string name="tes5_cause">Bacterial is caused by bacterial infections such as Erwinia carotovora, Felicularia F, Rhizoctonia S, or Xanthomonas spp. These bacteria can be spread through rain, splashing water, insects, or direct contact between infected and healthy plants. The optimum temperature for infection is 73°F (23°C). However, the disease occurs at warmer temperatures on lettuce grown in greenhouses. Bacterial blight often affects the leaves of plants with the appearance of small brown spots surrounded by a yellow halo, which over time can develop into large irregular blotches.</string>
     <string name="tes5_treatment">Arrange the spacing so that the outer leaves do not touch each other.</string>
-    <string name="tes5_treatment2">Provide adequate lighting, with direct sunlight for at least 4-6 hours per day.</string>
+    <string name="tes5_treatment2">Provide adequate lighting, with direct sunlight for at least 4–6 hours per day.</string>
     <string name="tes5_treatment3">Remove infected leaves to reduce the spread of the disease.</string>
-    <string name="tes5_treatment4">Spray with pesticides containing copper hydroxide or a mixture of copper and mankozeb at intervals of 3-5 days.</string>
+    <string name="tes5_treatment4">Spray with pesticides containing copper hydroxide or a mixture of copper and mankozeb at intervals of 3–5 days.</string>
     <string name="tes6_cause">Caused by the pathogen Septoria lactucae, the disease spreads through water, wind, insect transmission, weeds around the plant, or even through human hands or tools. Infected leaves have light brown coloured spots that appear between the leaf veins. Affected leaves may dry out and become thin.</string>
     <string name="tes6_treatment">Remove seedlings that show leaf spots before transplanting into hydroponic media.</string>
     <string name="tes6_treatment2">Avoid wetting the leaves by watering from above.</string>
@@ -87,7 +87,7 @@
     <string name="penyebab">Causes</string>
     <string name="pengendalian">Control</string>
     <string name="bahasa">Language</string>
-    <string name="ubah_bahasa">Change Language only supports Indonesian and English</string>
+    <string name="ubah_bahasa">Available languages are only Indonesian and English</string>
     <string name="tentang">About</string>
     <string name="tentang_aplikasi">About the App</string>
     <string name="kembali">Back</string>
@@ -97,4 +97,14 @@
     <string name="tolong_masukan_foto_terlebih_dahulu">Please Insert a Photo First</string>
     <string name="akurasi">\nAccuracy:  </string>
     <string name="nama">"Name: "</string>
+    <string name="see_more">See More</string>
+    <string name="our_teams">Our Team</string>
+    <string name="data_tersimpan_message">Data has already been saved</string>
+    <string name="team">Team</string>
+    <string name="member_of_team">Member Of Team</string>
+    <string name="about_us">About Us</string>
+    <string name="about">Inspired by Indonesia\'s agricultural landscape and the rising popularity of hydroponic gardening, HICARE addresses the critical need for efficient plant health management by developing a mobile application utilizing advanced image classification technology. Focused on detecting diseases in hydroponic lettuce, the app provides users with real-time identification of color and shape changes in plant leaves, coupled with comprehensive maintenance guidance and treatment strategies. This innovative solution aims to empower hydroponic enthusiasts and agricultural stakeholders alike, ensuring enhanced crop yield quality through accessible and accurate plant care management</string>
+    <string name="about_app">About App</string>
+    <string name="specialist_text">Ask to Kiana, our specialist Lettuce</string>
+
 </resources>

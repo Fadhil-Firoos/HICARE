@@ -5,6 +5,9 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -13,6 +16,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.capstone.hicare.R
@@ -37,11 +41,15 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.OnAdapterListener {
 
         supportActionBar?.show()
         supportActionBar?.apply {
-            title = ""
+            val titleString = "Article"
+            val spannableString = SpannableString(titleString)
+            spannableString.setSpan(ForegroundColorSpan(ContextCompat.getColor(this@ArticleActivity, R.color.black)), 0, titleString.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+            title = spannableString
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.arrow_back_left)
-            setBackgroundDrawable(ColorDrawable(Color.WHITE))
+            setBackgroundDrawable(ColorDrawable(Color.parseColor("#B9F5D3")))
             elevation = 0f
         }
         progressBar = findViewById(R.id.progressBar)

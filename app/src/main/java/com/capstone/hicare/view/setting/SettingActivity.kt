@@ -4,6 +4,9 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.provider.Settings
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -12,6 +15,7 @@ import androidx.core.content.ContextCompat
 import com.capstone.hicare.R
 import com.capstone.hicare.databinding.ActivitySettingBinding
 import com.capstone.hicare.view.about.AboutActivity
+import com.capstone.hicare.view.team.TeamActivity
 
 
 class SettingActivity : AppCompatActivity() {
@@ -26,7 +30,11 @@ class SettingActivity : AppCompatActivity() {
 
         supportActionBar?.show()
         supportActionBar?.apply {
-            title = ""
+            val titleString = "Setting"
+            val spannableString = SpannableString(titleString)
+            spannableString.setSpan(ForegroundColorSpan(ContextCompat.getColor(this@SettingActivity, R.color.black)), 0, titleString.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+            title = spannableString
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.arrow_back_left)
@@ -42,7 +50,10 @@ class SettingActivity : AppCompatActivity() {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
-
+        binding.team.setOnClickListener {
+            val intent = Intent(this, TeamActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

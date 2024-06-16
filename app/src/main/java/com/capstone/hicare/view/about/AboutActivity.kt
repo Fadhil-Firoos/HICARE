@@ -4,6 +4,9 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
@@ -22,58 +25,19 @@ class AboutActivity : AppCompatActivity() {
 
         supportActionBar?.show()
         supportActionBar?.apply {
-            title = ""
+            val titleString = "About App"
+            val spannableString = SpannableString(titleString)
+            spannableString.setSpan(ForegroundColorSpan(ContextCompat.getColor(this@AboutActivity, R.color.black)), 0, titleString.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+            title = spannableString
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.arrow_back_left)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this@AboutActivity, R.color.white)))
+            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this@AboutActivity, R.color.green_light)))
             elevation = 0f
         }
 
-        binding.apply {
-            fadhil.setOnClickListener {
-                val linkedinFadhil = "https://www.linkedin.com/in/fadhil-firoos"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(linkedinFadhil)
-                startActivity(intent)
-            }
-            nanda.setOnClickListener {
-                val linkedinNanda = "https://www.linkedin.com/in/nanda-satria-putra-1096332bb"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(linkedinNanda)
-                startActivity(intent)
-            }
-            ilham.setOnClickListener {
-                val linkedinNanda = "https://www.linkedin.com/in/ilham-yoga-pratama-69775a255"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(linkedinNanda)
-                startActivity(intent)
-            }
-            radot.setOnClickListener {
-                val linkedinNanda = "https://www.linkedin.com/in/radot-nababan-a51247195"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(linkedinNanda)
-                startActivity(intent)
-            }
-            yani.setOnClickListener {
-                val linkedinNanda = "https://www.linkedin.com/in/yani-siti-nurpazrin-67b2b1260"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(linkedinNanda)
-                startActivity(intent)
-            }
-            sultan.setOnClickListener {
-                val linkedinNanda = "https://www.linkedin.com/in/sultanrafi"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(linkedinNanda)
-                startActivity(intent)
-            }
-            zulza.setOnClickListener {
-                val linkedinNanda = "https://www.linkedin.com/in/zulza-laddera-aripin"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(linkedinNanda)
-                startActivity(intent)
-            }
-        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

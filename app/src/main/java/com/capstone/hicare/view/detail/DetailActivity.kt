@@ -2,6 +2,9 @@ package com.capstone.hicare.view.detail
 
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
@@ -64,7 +67,17 @@ class DetailActivity : AppCompatActivity() {
         val colorGreenLight = ContextCompat.getColor(this, R.color.green_light)
         supportActionBar?.show()
         supportActionBar?.apply {
-            title = diseaseName
+            val spannableString = SpannableString(diseaseName)
+            if (diseaseName != null) {
+                spannableString.setSpan(ForegroundColorSpan(
+                    ContextCompat.getColor(
+                        this@DetailActivity,
+                        R.color.black
+                    )
+                ), 0, diseaseName.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+
+            title = spannableString
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.arrow_back_left)

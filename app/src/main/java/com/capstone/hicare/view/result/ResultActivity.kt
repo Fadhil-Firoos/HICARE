@@ -112,7 +112,7 @@ class ResultActivity : AppCompatActivity() {
 
             if (imageByteArray != null) {
                 val imageUri = Uri.parse(imageByteArray.toString())
-                showToast("Data Tersimpan")
+                Toast.makeText(this, getString(R.string.data_tersimpan_message), Toast.LENGTH_SHORT).show()
                 savePredictionToDatabase(imageUri, result)
             } else {
                 showToast("No image URI provided")
