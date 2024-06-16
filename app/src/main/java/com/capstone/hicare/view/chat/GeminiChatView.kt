@@ -1,6 +1,8 @@
 package com.capstone.hicare.view.chat
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,12 +14,15 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Send
+import androidx.compose.material.icons.filled.Send
 import androidx.compose.material.icons.rounded.AccountCircle
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -34,9 +39,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.ai.client.generativeai.GenerativeModel
@@ -44,6 +51,8 @@ import com.google.ai.client.generativeai.type.Content
 import com.google.ai.client.generativeai.type.TextPart
 import kotlinx.coroutines.launch
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import com.capstone.hicare.R
 
 @Composable
@@ -78,28 +87,46 @@ fun GeminiChatView(
             modifier = Modifier.fillMaxWidth(),
             color = appThemColor,
         ) {
-            Text(
-                text = "HICARE",
-                color = Color.Black,
-                fontSize = 24.sp,
-                modifier = Modifier
-                    .padding(16.dp)
-                    .weight(10f)
-            )
+            Row(
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.avatar),
+                    contentDescription = "Profile Image",
+                    modifier = Modifier
+                        .size(55.dp)
+                        .clip(CircleShape)
+                        .border(1.dp, Color.Black, CircleShape)
+                )
 
-            Text(
-                text = "Ask to Kiana, our specialist Lettuce",
-                color = Color.Black,
-                fontSize = 12.sp,
-                modifier = Modifier.padding(16.dp, top = 50.dp)
-            )
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .align(Alignment.CenterVertically)
+                ) {
+                    Text(
+                        text = "HICARE",
+                        color = Color.Black,
+                        fontSize = 24.sp,
+                    )
+
+                    Text(
+                        text = "Ask to Kiana, our specialist Lettuce",
+                        color = Color.Black,
+                        fontSize = 12.sp,
+                        modifier = Modifier.padding(top = 4.dp)
+                    )
+                }
+            }
         }
 
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f)
-                .padding(8.dp)
+                .padding(horizontal = 8.dp, vertical = 4.dp)
         ) {
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
@@ -109,11 +136,12 @@ fun GeminiChatView(
                     ChatBubble(
                         text = chat.text,
                         memberType = chat.memberType,
-                        appThemColor = appThemColor
+                        appThemeColor = appThemColor
                     )
                 }
             }
         }
+
 
         RoundedCornerTextFieldWithSend(
             modifier = Modifier.fillMaxWidth(),
@@ -148,12 +176,12 @@ fun GeminiChatView(
 fun ChatBubble(
     text: String,
     memberType: MemberType,
-    appThemColor: Color
+    appThemeColor: Color
 ) {
     val bubbleColor = if (memberType == MemberType.USER) {
         Color(0xFFB9F5D3)
     } else {
-        appThemColor
+        appThemeColor
     }
 
     val alignment = if (memberType == MemberType.USER) {
@@ -171,7 +199,7 @@ fun ChatBubble(
     ) {
         if (memberType == MemberType.BOT) {
             Icon(
-                painter = painterResource(id = R.drawable.hutao),
+                painter = painterResource(id = R.drawable.bot),
                 contentDescription = "Bot Avatar",
                 modifier = Modifier.size(40.dp),
                 tint = Color.Unspecified
@@ -179,32 +207,39 @@ fun ChatBubble(
             Spacer(modifier = Modifier.width(8.dp))
         }
 
-        Box(
-            modifier = Modifier
-                .background(
-                    color = bubbleColor,
-                    shape = RoundedCornerShape(12.dp)
-                )
-                .padding(12.dp)
+        Row(
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(
-                text = text,
-                color = Color.Black,
-                fontSize = 16.sp
-            )
-        }
+            Box(
+                modifier = Modifier
+                    .background(
+                        color = bubbleColor,
+                        shape = RoundedCornerShape(12.dp)
+                    )
+                    .padding(12.dp)
+            ) {
+                Text(
+                    text = text,
+                    color = Color.Black,
+                    fontSize = 16.sp,
+                    modifier = Modifier.widthIn(max = 240.dp)
+                )
+            }
 
-        if (memberType == MemberType.USER) {
-            Spacer(modifier = Modifier.width(8.dp))
-            Icon(
-                imageVector = Icons.Rounded.AccountCircle,
-                contentDescription = "User Avatar",
-                modifier = Modifier.size(40.dp),
-                tint = Color.Unspecified
-            )
+            if (memberType == MemberType.USER) {
+                Spacer(modifier = Modifier.width(8.dp))
+                Icon(
+                    painter = painterResource(id = R.drawable.user),
+                    contentDescription = "User Avatar",
+                    modifier = Modifier.size(40.dp),
+                    tint = Color.Unspecified
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+            }
         }
     }
 }
+
 
 @Composable
 fun RoundedCornerTextFieldWithSend(
@@ -256,8 +291,9 @@ fun RoundedCornerTextFieldWithSend(
                 )
             ) {
                 Icon(
-                    imageVector = Icons.AutoMirrored.Filled.Send,
-                    contentDescription = "Send"
+                    imageVector = Icons.Default.Send,
+                    contentDescription = "Send",
+                    tint = Color.Black
                 )
             }
         }

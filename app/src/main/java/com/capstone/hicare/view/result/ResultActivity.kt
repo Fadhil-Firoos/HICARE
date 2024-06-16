@@ -48,6 +48,9 @@ class ResultActivity : AppCompatActivity() {
             btkembali.setOnClickListener {
                 onBackPressed()
             }
+            back.setOnClickListener {
+                onBackPressed()
+            }
 
             if (nama == "Healthy") {
                 txtpenyebab.text = getString(R.string.manfaat_healthy)
@@ -100,6 +103,8 @@ class ResultActivity : AppCompatActivity() {
                 scrollView2.visibility = ScrollView.INVISIBLE
                 tvTidakTerdefinisi.visibility = TextView.VISIBLE
                 save.visibility = Button.INVISIBLE
+                back.visibility = Button.VISIBLE
+                btkembali.visibility = Button.INVISIBLE
             }
         }
 
