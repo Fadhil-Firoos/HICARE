@@ -1,23 +1,26 @@
 package com.capstone.hicare.view.setting
 
 import android.content.Intent
-import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.capstone.hicare.R
+import com.capstone.hicare.databinding.ActivitySettingBinding
+import com.capstone.hicare.view.about.AboutActivity
 
 
 class SettingActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySettingBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_setting)
+        binding = ActivitySettingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         window.statusBarColor = getColor(R.color.white)
         hideNavigationBar()
 
@@ -27,14 +30,18 @@ class SettingActivity : AppCompatActivity() {
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.arrow_back_left)
-            setBackgroundDrawable(ColorDrawable(Color.WHITE))
+            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this@SettingActivity, R.color.green_light)))
             elevation = 0f
         }
 
-//        binding.btnLanguage.setOnClickListener {
-//            val intent = Intent(Intent(Settings.ACTION_LOCALE_SETTINGS))
-//            startActivity(intent)
-//        }
+        binding.setBahasa.setOnClickListener {
+            val intent = Intent(Intent(Settings.ACTION_LOCALE_SETTINGS))
+            startActivity(intent)
+        }
+        binding.about.setOnClickListener {
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

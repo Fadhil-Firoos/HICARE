@@ -45,6 +45,7 @@
             android:text="@string/lettuce_disease"
             android:textColor="@color/black"
             android:textStyle="bold"
+            android:fontFamily="@font/poppins_semibold"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/card_iv"
             app:layout_constraintTop_toTopOf="@+id/card_iv" />

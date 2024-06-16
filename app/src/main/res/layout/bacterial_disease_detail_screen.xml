@@ -37,6 +37,7 @@
         android:text="Penyebab"
         android:textColor="@color/black"
         android:textSize="18sp"
+        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -72,6 +73,7 @@
         android:text="Pengendalian"
         android:textColor="@color/black"
         android:textSize="18sp"
+        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintStart_toStartOf="@+id/myRectangleView"
         app:layout_constraintTop_toBottomOf="@+id/desc" />
 

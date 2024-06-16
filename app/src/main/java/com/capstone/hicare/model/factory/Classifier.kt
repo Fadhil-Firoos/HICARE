@@ -94,7 +94,7 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
                     if (LABEL_LIST.size > i) LABEL_LIST[i] else "Unknown", confidence*100)
                 )
             } else {
-                pq.add(Classifier.Recognition("" + i, "tidak terdefinisi", confidence*100))
+                pq.add(Classifier.Recognition("" + i, "under treshold", confidence*100))
             }
 
         }

@@ -2,8 +2,6 @@ package com.capstone.hicare.view.result
 
 import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -42,7 +40,7 @@ class ResultActivity : AppCompatActivity() {
 
 
         binding.apply {
-            penyakit.text = "Nama : " + intent.getStringExtra("penyakit")
+            penyakit.text = getString(R.string.nama) + intent.getStringExtra("penyakit")
             foto.setImageBitmap(bitmap)
 
             btkembali.setOnClickListener {
@@ -94,7 +92,7 @@ class ResultActivity : AppCompatActivity() {
                 txtObat.text = getString(R.string.penenganan_septoria_blight)
 
             }
-            else if (nama == "Undefine"){
+            else if (nama == "Undefine" || nama == "under treshold"){
                 txtpenyebab.visibility = TextView.INVISIBLE
                 txtObat.visibility = TextView.INVISIBLE
                 foto.setImageResource(R.drawable.nahida)

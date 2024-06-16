@@ -1,9 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.HICARE" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
     <style name="Theme.HICARE" parent="Base.Theme.HICARE">
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
     <style name="Theme.HICARE.ActionBar" parent="Theme.Material3.DayNight">

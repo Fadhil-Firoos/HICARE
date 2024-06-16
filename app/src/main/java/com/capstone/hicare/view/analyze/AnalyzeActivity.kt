@@ -82,14 +82,15 @@ class AnalyzeActivity : AppCompatActivity() {
             val scaledSampleBitmap = Bitmap.createScaledBitmap(sampleBitmap, mInputSize, mInputSize, true)
 
             if (mBitmap.sameAs(scaledSampleBitmap)) {
-                Toast.makeText(this, "Tolong Masukan Foto Terlebih Dahulu", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,
+                    getString(R.string.tolong_masukan_foto_terlebih_dahulu), Toast.LENGTH_SHORT).show()
             } else {
                 val results = mClassifier.recognizeImage(mBitmap).firstOrNull()
                 val intent = Intent(this, ResultActivity::class.java)
 
                 intent.putExtra(
                     "penyakit",
-                    results?.title + "\n" + "\nAkurasi: " + results?.confidence + "%"
+                    results?.title + "\n" + getString(R.string.akurasi) + results?.confidence + "%"
                 )
                 intent.putExtra("nama", results?.title)
 

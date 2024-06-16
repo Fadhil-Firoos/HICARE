@@ -24,7 +24,6 @@ import com.capstone.hicare.view.fragment.HomeFragment
 import com.capstone.hicare.view.setting.SettingActivity
 import com.qamar.curvedbottomnaviagtion.CurvedBottomNavigation
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var fragment: Fragment = HomeFragment()

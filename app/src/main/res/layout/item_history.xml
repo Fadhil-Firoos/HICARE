@@ -49,6 +49,7 @@
                 android:text="@string/nama_tanaman"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/img_sample"
                 app:layout_constraintTop_toTopOf="parent"
