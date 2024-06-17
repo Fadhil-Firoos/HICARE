@@ -11,11 +11,14 @@ HICARE is a mobile app that uses machine learning to optimize the care of hydrop
 
 ## Features
 
-- [ ] Image-based analysis
-- [ ] Display of analysis results
-- [ ] article on hydoponic plant care 
-- [ ] Analysis history
+- [✅] Image-based analysis
+- [✅] Display of analysis results
+- [✅] article on hydoponic plant care 
+- [✅] Analysis history
+
+## Additional features
+- [✅] Chat AI
 
 ## Mobile Development Team
-- [ ] A119d4ky3752 – Fadhil Firoos – Institut Teknologi Sumatera
-- [ ] A107D4KY4036 – Nanda Satria Putra	– Institut Informatika Dan Bisnis Darmajaya
+- A119d4ky3752 – Fadhil Firoos – Institut Teknologi Sumatera
+- A107D4KY4036 – Nanda Satria Putra	– Institut Informatika Dan Bisnis Darmajaya
