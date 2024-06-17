@@ -82,8 +82,6 @@ class MainActivity : AppCompatActivity() {
         if (fragment is CameraFragment) {
             window.statusBarColor = getColor(R.color.smoooth_black)
 
-            layoutParams.bottomMargin = resources.getDimensionPixelSize(R.dimen.margin_zero)
-            myTextView.layoutParams = layoutParams
             supportActionBar?.show()
             supportActionBar?.apply {
                 title = ""
@@ -138,12 +136,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.option_menu, menu)
         if(fragment is CameraFragment){
-            menuInflater.inflate(R.menu.option_menu, menu)
             val settingItem = menu?.findItem(R.id.btn_setting)
             settingItem?.isVisible = false
-        }else {
-            menuInflater.inflate(R.menu.option_menu, menu)
         }
         return true
     }
