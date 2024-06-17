@@ -4,10 +4,10 @@ HICARE : Make Your Plant Healthy 🌱
 ## About The Project
 
 <div align="center">
-  <img src="https://github.com/HICARE-C241-PS277/HICARE-C241-PS277/blob/main/Frame.png" alt="HICARE" width="auto" height="auto"  style="border-radius:50%">    
+  <img src="https://github.com/HICARE-C241-PS277/.github/blob/main/profile/Frame.png" alt="HICARE" width="auto" height="auto"  style="border-radius:50%">    
 </div>
 <br />
-HICARE is a mobile app that uses machine learning to optimize the care of hydroponic lettuce plants. By integrating environmental and nutritional data, HICARE provides specific recommendations for each stage of lettuce growth, ensuring maximum and healthy yields.
+HICARE is an innovative app designed to help farmers detect diseases in lettuce plants using image classification technology. The app allows users to upload photos of lettuce plants and get accurate disease predictions, as well as save the prediction results for future reference. In addition, HICARE is equipped with a Gemini API-based AI chat feature that specifically answers questions related to lettuce and hydroponic diseases. Users can also access various informative articles on hydroponic plant care, thereby increasing their knowledge and skills in hydroponic plant cultivation.
 
 ## Features
 
