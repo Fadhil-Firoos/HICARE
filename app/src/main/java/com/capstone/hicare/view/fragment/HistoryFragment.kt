@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -24,6 +25,7 @@ class HistoryFragment : Fragment(), PredictionHistoryAdapter.OnDeleteClickListen
     private lateinit var predictionRecyclerView: RecyclerView
     private lateinit var tvNotFound: TextView
     private lateinit var predictionAdapter: PredictionHistoryAdapter
+    private lateinit var nf: ImageView
 
     private var predictionList: MutableList<PredictionHistory> = mutableListOf()
 
@@ -35,6 +37,7 @@ class HistoryFragment : Fragment(), PredictionHistoryAdapter.OnDeleteClickListen
 
         predictionRecyclerView = view.findViewById(R.id.rvHistory)
         tvNotFound = view.findViewById(R.id.tvNotFound)
+        nf = view.findViewById(R.id.nf)
 
         predictionAdapter = PredictionHistoryAdapter(predictionList)
         predictionAdapter.setOnDeleteClickListener(this)
@@ -70,9 +73,11 @@ class HistoryFragment : Fragment(), PredictionHistoryAdapter.OnDeleteClickListen
     private fun showOrHideNoHistoryText() {
         if (predictionList.isEmpty()) {
             tvNotFound.visibility = View.VISIBLE
+            nf.visibility = View.VISIBLE
             predictionRecyclerView.visibility = View.GONE
         } else {
             tvNotFound.visibility = View.GONE
+            nf.visibility = View.GONE
             predictionRecyclerView.visibility = View.VISIBLE
         }
     }
